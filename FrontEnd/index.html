@@ -1,0 +1,4633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>GastroLink — Conectando Restaurantes e Influenciadores</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<!-- PAGE: LANDING -->
+<div id="page-landing" class="page active">
+
+  <nav class="landing-nav">
+    <div class="logo">
+      Gastro<span>Link</span>
+    </div>
+
+    <div class="landing-actions">
+      <button type="button" class="btn-nav-login" onclick="showLogin()">
+        Entrar
+      </button>
+
+      <button type="button" class="btn-nav-register" onclick="showRegister()">
+        Criar conta
+      </button>
+    </div>
+  </nav>
+
+  <section class="landing-hero">
+
+    <div class="landing-content">
+
+      <span class="landing-badge">
+        🍽️ Conectando negócios e influência
+      </span>
+
+      <h1>
+        Sua próxima parceria
+        <span>começa aqui.</span>
+      </h1>
+
+      <p>
+        O GastroLink conecta restaurantes e influenciadores
+        para criar parcerias, divulgar negócios e gerar novas oportunidades.
+      </p>
+
+      <div class="landing-buttons">
+
+        <button
+          type="button"
+          class="btn-primary"
+          onclick="showRegister()">
+          Criar minha conta
+        </button>
+
+        <button
+          type="button"
+          class="btn-secondary"
+          onclick="showLogin()">
+          Já tenho uma conta
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="landing-visual">
+
+      <div class="landing-preview">
+
+    <div class="preview-header">
+        <div>
+            <span class="preview-label">PARCERIA EM DESTAQUE</span>
+            <h3>Nova oportunidade</h3>
+        </div>
+
+        <span class="preview-dot"></span>
+    </div>
+
+
+    <div class="preview-profile">
+
+        <div class="profile-image">
+            <span>🍝</span>
+        </div>
+
+        <div class="profile-info">
+            <strong>La Tavola</strong>
+            <span>Restaurante • São Paulo</span>
+
+            <div class="profile-stats">
+                <div>
+                    <strong>12.8k</strong>
+                    <span>seguidores</span>
+                </div>
+
+                <div>
+                    <strong>4.9</strong>
+                    <span>avaliação</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="preview-divider"></div>
+
+
+    <div class="preview-partnership">
+
+        <div class="creator">
+
+            <div class="creator-avatar">
+                JM
+            </div>
+
+            <div>
+                <strong>Julia Mendes</strong>
+                <span>Food Creator</span>
+            </div>
+
+        </div>
+
+        <div class="partnership-arrow">
+            →
+        </div>
+
+        <div class="creator">
+
+            <div class="creator-avatar orange">
+                GL
+            </div>
+
+            <div>
+                <strong>GastroLink</strong>
+                <span>Parceria</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="preview-footer">
+
+        <div>
+            <span class="footer-label">STATUS</span>
+            <strong>Parceria disponível</strong>
+        </div>
+
+        <button type="button" onclick="showRegister()">
+            Ver oportunidade
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="floating-stat stat-one">
+    <span>✦</span>
+    <div>
+        <strong>+240</strong>
+        <small>parcerias</small>
+    </div>
+</div>
+
+
+<div class="floating-stat stat-two">
+    <span>✓</span>
+    <div>
+        <strong>98%</strong>
+        <small>conexões</small>
+    </div>
+</div>
+
+    </div>
+
+  </section>
+
+</div>
+<!-- ═══════════════════════════════════════════
+     PAGE: COMPLETAR PERFIL INFLUENCER
+═══════════════════════════════════════════ -->
+<div id="page-completar-influencer" class="page">
+
+  <style>
+    /* ==========================================
+       GASTROLINK — COMPLETAR PERFIL
+    ========================================== */
+
+    #page-completar-influencer {
+      min-height: calc(100vh - 80px);
+      padding: 50px 24px 80px;
+      background:
+        radial-gradient(
+          circle at 85% 10%,
+          rgba(232, 129, 58, 0.10),
+          transparent 30%
+        ),
+        #0d0d0d;
+    }
+
+    .perfil-setup-wrapper {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    .perfil-setup-header {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .perfil-setup-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border: 1px solid rgba(232, 129, 58, 0.25);
+      border-radius: 999px;
+      background: rgba(232, 129, 58, 0.08);
+      color: #e8813a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .perfil-setup-header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.08;
+      color: #ffffff;
+    }
+
+    .perfil-setup-header h1 span {
+      color: #e8813a;
+    }
+
+    .perfil-setup-header p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: #999999;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* GRID */
+
+    .perfil-setup-grid {
+      display: grid;
+      grid-template-columns: 0.75fr 1.45fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* CARD */
+
+    .perfil-setup-card {
+      background: #151515;
+      border: 1px solid #262626;
+      border-radius: 22px;
+      padding: 28px;
+    }
+
+    .perfil-setup-card-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .perfil-setup-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(232, 129, 58, 0.10);
+      border: 1px solid rgba(232, 129, 58, 0.18);
+      font-size: 18px;
+    }
+
+    .perfil-setup-card-title h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 17px;
+    }
+
+    .perfil-setup-card-title p {
+      margin: 3px 0 0;
+      color: #777777;
+      font-size: 12px;
+    }
+
+    /* AVATAR */
+
+    .perfil-avatar-setup {
+      width: 150px;
+      height: 150px;
+      margin: 10px auto 22px;
+      border-radius: 50%;
+      background:
+        linear-gradient(
+          145deg,
+          #242424,
+          #101010
+        );
+      border: 2px solid #2d2d2d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .perfil-avatar-setup::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 1px dashed rgba(232, 129, 58, 0.35);
+      pointer-events: none;
+    }
+
+    .perfil-avatar-setup span {
+      font-size: 48px;
+      font-weight: 700;
+      color: #e8813a;
+    }
+
+    .perfil-avatar-setup img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .perfil-avatar-help {
+      text-align: center;
+      color: #777777;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* INFO BOX */
+
+    .perfil-info-box {
+      margin-top: 26px;
+      padding: 15px;
+      border-radius: 14px;
+      background: #101010;
+      border: 1px solid #242424;
+    }
+
+    .perfil-info-box strong {
+      display: block;
+      color: #dddddd;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .perfil-info-box p {
+      margin: 0;
+      color: #777777;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* FORM */
+
+    .perfil-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .perfil-field {
+      min-width: 0;
+    }
+
+    .perfil-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .perfil-field label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: #dddddd;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .perfil-field label span {
+      color: #666666;
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    .perfil-field input,
+    .perfil-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #2a2a2a;
+      background: #101010;
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 13px 14px;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .perfil-field input {
+      height: 48px;
+    }
+
+    .perfil-field textarea {
+      min-height: 130px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .perfil-field input::placeholder,
+    .perfil-field textarea::placeholder {
+      color: #555555;
+    }
+
+    .perfil-field input:focus,
+    .perfil-field textarea:focus {
+      border-color: #e8813a;
+      background: #131313;
+      box-shadow: 0 0 0 3px rgba(232, 129, 58, 0.10);
+    }
+
+    .perfil-field-hint {
+      margin-top: 6px;
+      color: #666666;
+      font-size: 11px;
+    }
+
+    /* ACTION */
+
+    .perfil-setup-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid #242424;
+    }
+
+    .perfil-setup-actions p {
+      margin: 0;
+      color: #666666;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .perfil-btn-finalizar {
+      min-height: 48px;
+      padding: 0 24px;
+      border: none;
+      border-radius: 12px;
+      background: #e8813a;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .perfil-btn-finalizar:hover {
+      background: #f08d49;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(232, 129, 58, 0.18);
+    }
+
+    .perfil-btn-finalizar:active {
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVO */
+
+    @media (max-width: 800px) {
+
+      #page-completar-influencer {
+        padding: 35px 16px 60px;
+      }
+
+      .perfil-setup-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .perfil-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .perfil-field.full {
+        grid-column: auto;
+      }
+
+      .perfil-setup-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .perfil-btn-finalizar {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .perfil-setup-card {
+        padding: 20px;
+        border-radius: 18px;
+      }
+
+      .perfil-setup-header {
+        margin-bottom: 28px;
+      }
+
+      .perfil-avatar-setup {
+        width: 125px;
+        height: 125px;
+      }
+
+      .perfil-avatar-setup span {
+        font-size: 40px;
+      }
+    }
+  </style>
+
+  <div class="perfil-setup-wrapper">
+
+    <!-- CABEÇALHO -->
+    <div class="perfil-setup-header">
+
+      <div class="perfil-setup-badge">
+        ✦ Perfil de Influenciador
+      </div>
+
+      <h1>
+        Vamos deixar seu perfil<br>
+        <span>pronto para as parcerias.</span>
+      </h1>
+
+      <p>
+        Essas informações serão usadas para apresentar você aos
+        restaurantes que procuram criadores para novas parcerias.
+      </p>
+
+    </div>
+
+    <div class="perfil-setup-grid">
+
+      <!-- ======================================
+           CARD ESQUERDO
+      ======================================= -->
+      <div class="perfil-setup-card">
+
+        <div class="perfil-setup-card-title">
+
+          <div class="perfil-setup-card-icon">
+            👤
+          </div>
+
+          <div>
+            <h2>Seu perfil</h2>
+            <p>Como você aparecerá na plataforma</p>
+          </div>
+
+        </div>
+
+        <div class="perfil-avatar-setup">
+
+          <span id="perfil-setup-placeholder">
+            I
+          </span>
+
+          <img
+            id="perfil-setup-preview"
+            src=""
+            alt="Prévia da foto de perfil"
+          >
+
+        </div>
+
+        <p class="perfil-avatar-help">
+          Adicione uma URL de imagem ao lado para
+          visualizar sua foto aqui.
+        </p>
+
+        <div class="perfil-info-box">
+
+          <strong>💡 Dica</strong>
+
+          <p>
+            Um perfil completo facilita para os restaurantes
+            conhecerem seu conteúdo antes de enviar uma parceria.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================
+           CARD DIREITO — FORMULÁRIO
+      ======================================= -->
+      <div class="perfil-setup-card">
+
+        <div class="perfil-setup-card-title">
+
+          <div class="perfil-setup-card-icon">
+            ✏️
+          </div>
+
+          <div>
+            <h2>Informações do perfil</h2>
+            <p>Preencha seus dados principais</p>
+          </div>
+
+        </div>
+
+
+        <div class="perfil-form-grid">
+
+          <!-- NOME -->
+          <div class="perfil-field full">
+
+            <label for="perfil-nome">
+              Nome
+              <span>obrigatório</span>
+            </label>
+
+            <input
+              type="text"
+              id="perfil-nome"
+              placeholder="Ex: Luiz Silva"
+              maxlength="100"
+              autocomplete="name"
+              required
+            >
+
+          </div>
+
+
+          <!-- INSTAGRAM -->
+          <div class="perfil-field">
+
+            <label for="perfil-instagram">
+              Instagram
+              <span>obrigatório</span>
+            </label>
+
+            <input
+              type="text"
+              id="perfil-instagram"
+              placeholder="@seuperfil"
+              maxlength="100"
+              autocomplete="off"
+              required
+            >
+
+            <div class="perfil-field-hint">
+              Seu perfil no Instagram
+            </div>
+
+          </div>
+
+
+          <!-- SEGUIDORES -->
+          <div class="perfil-field">
+
+            <label for="perfil-seguidores">
+              Seguidores
+              <span>opcional</span>
+            </label>
+
+            <input
+              type="number"
+              id="perfil-seguidores"
+              placeholder="Ex: 15000"
+              min="0"
+              step="1"
+              inputmode="numeric"
+            >
+
+            <div class="perfil-field-hint">
+              Informe um número aproximado
+            </div>
+
+          </div>
+
+
+          <!-- TELEFONE -->
+          <div class="perfil-field">
+
+            <label for="perfil-telefone">
+              Telefone
+              <span>opcional</span>
+            </label>
+
+            <input
+              type="tel"
+              id="perfil-telefone"
+              placeholder="(11) 99999-9999"
+              maxlength="15"
+              autocomplete="tel"
+              inputmode="numeric"
+            >
+
+            <div class="perfil-field-hint">
+              Ex: (11) 99999-9999
+            </div>
+
+          </div>
+
+
+          <!-- FOTO -->
+          <div class="perfil-field">
+
+            <label for="perfil-foto">
+              Foto de perfil
+              <span>opcional</span>
+            </label>
+
+            <input
+              type="url"
+              id="perfil-foto"
+              placeholder="https://..."
+              maxlength="500"
+              autocomplete="url"
+            >
+
+            <div class="perfil-field-hint">
+              Cole o endereço da sua imagem
+            </div>
+
+          </div>
+
+
+          <!-- DESCRIÇÃO -->
+          <div class="perfil-field full">
+
+            <label for="perfil-descricao">
+              Sobre você
+              <span id="perfil-descricao-contador">
+                0 / 500
+              </span>
+            </label>
+
+            <textarea
+              id="perfil-descricao"
+              maxlength="500"
+              placeholder="Conte um pouco sobre você, seu conteúdo e o tipo de parceria que gostaria de realizar..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- AÇÃO -->
+
+        <div class="perfil-setup-actions">
+
+          <p>
+            🔒 Seus dados ficam vinculados<br>
+            somente à sua conta.
+          </p>
+
+          <button
+            type="button"
+            class="perfil-btn-finalizar"
+            onclick="criarPerfilInfluencer()"
+          >
+            Criar meu perfil →
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: COMPLETAR PERFIL RESTAURANTE
+══════════════════════════════════════════ -->
+
+<div id="page-completar-restaurante" class="page">
+
+    <style>
+        #page-completar-restaurante {
+            min-height: calc(100vh - 80px);
+            padding: 50px 24px 80px;
+            background:
+                radial-gradient(
+                    circle at 85% 10%,
+                    rgba(232, 129, 58, 0.10),
+                    transparent 30%
+                ),
+                #0d0d0d;
+        }
+
+        #page-completar-restaurante .perfil-setup-wrapper {
+            width: 100%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        #page-completar-restaurante .perfil-setup-header {
+            text-align: center;
+            margin-bottom: 42px;
+        }
+
+        #page-completar-restaurante .perfil-setup-header h1 {
+            margin: 0 0 12px;
+            font-size: clamp(30px, 5vw, 46px);
+            line-height: 1.08;
+            color: #ffffff;
+        }
+
+        #page-completar-restaurante .perfil-setup-header h1 span {
+            color: #e8813a;
+        }
+
+        #page-completar-restaurante .perfil-setup-header p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: #999999;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        #page-completar-restaurante .perfil-setup-grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.45fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        #page-completar-restaurante .perfil-setup-card {
+            background: #151515;
+            border: 1px solid #262626;
+            border-radius: 22px;
+            padding: 28px;
+        }
+
+        #page-completar-restaurante .perfil-setup-card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        #page-completar-restaurante .perfil-setup-card-title h2 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 17px;
+        }
+
+        #page-completar-restaurante .perfil-setup-card-title p {
+            margin: 3px 0 0;
+            color: #777777;
+            font-size: 12px;
+        }
+
+        #page-completar-restaurante .perfil-setup-card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(232, 129, 58, 0.10);
+            border: 1px solid rgba(232, 129, 58, 0.18);
+            font-size: 18px;
+        }
+
+        #page-completar-restaurante .perfil-avatar-setup {
+            width: 150px;
+            height: 150px;
+            margin: 10px auto 22px;
+            border-radius: 22px;
+            background: linear-gradient(145deg, #242424, #101010);
+            border: 2px solid #2d2d2d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #page-completar-restaurante .perfil-avatar-setup {
+            overflow: hidden;
+            position: relative;
+        }
+
+        #page-completar-restaurante .perfil-avatar-setup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        #page-completar-restaurante .perfil-avatar-setup span {
+            font-size: 48px;
+            font-weight: 700;
+            color: #e8813a;
+        }
+
+        #page-completar-restaurante .perfil-avatar-help {
+            text-align: center;
+            color: #777777;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        #page-completar-restaurante .perfil-info-box {
+            margin-top: 26px;
+            padding: 15px;
+            border-radius: 14px;
+            background: #101010;
+            border: 1px solid #242424;
+        }
+
+        #page-completar-restaurante .perfil-info-box strong {
+            display: block;
+            color: #dddddd;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        #page-completar-restaurante .perfil-info-box p {
+            margin: 0;
+            color: #777777;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        #page-completar-restaurante .perfil-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        #page-completar-restaurante .perfil-field {
+            min-width: 0;
+        }
+
+        #page-completar-restaurante .perfil-field.full {
+            grid-column: 1 / -1;
+        }
+
+        #page-completar-restaurante .perfil-field label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            color: #dddddd;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        #page-completar-restaurante .perfil-field label span {
+            color: #666666;
+            font-size: 11px;
+            font-weight: 400;
+        }
+
+        #page-completar-restaurante .perfil-field input,
+        #page-completar-restaurante .perfil-field textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #2a2a2a;
+            background: #101010;
+            color: #ffffff;
+            border-radius: 12px;
+            padding: 13px 14px;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        #page-completar-restaurante .perfil-field input {
+            height: 48px;
+        }
+
+        #page-completar-restaurante .perfil-field textarea {
+            min-height: 130px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        #page-completar-restaurante .perfil-field input:focus,
+        #page-completar-restaurante .perfil-field textarea:focus {
+            border-color: #e8813a;
+            box-shadow: 0 0 0 3px rgba(232, 129, 58, 0.10);
+        }
+
+        #page-completar-restaurante .perfil-field input::placeholder,
+        #page-completar-restaurante .perfil-field textarea::placeholder {
+            color: #555555;
+        }
+
+        #page-completar-restaurante .perfil-field-hint {
+            margin-top: 6px;
+            color: #666666;
+            font-size: 11px;
+        }
+
+        #page-completar-restaurante .perfil-setup-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 28px;
+            padding-top: 22px;
+            border-top: 1px solid #242424;
+        }
+
+        #page-completar-restaurante .perfil-setup-actions p {
+            margin: 0;
+            color: #666666;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        #page-completar-restaurante .perfil-btn-finalizar {
+            min-height: 48px;
+            padding: 0 24px;
+            border: none;
+            border-radius: 12px;
+            background: #e8813a;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+            white-space: nowrap;
+        }
+
+        #page-completar-restaurante .perfil-btn-finalizar:hover {
+            background: #f08d49;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 800px) {
+            #page-completar-restaurante {
+                padding: 35px 16px 60px;
+            }
+
+            #page-completar-restaurante .perfil-setup-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #page-completar-restaurante .perfil-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #page-completar-restaurante .perfil-field.full {
+                grid-column: auto;
+            }
+
+            #page-completar-restaurante .perfil-setup-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #page-completar-restaurante .perfil-btn-finalizar {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #page-completar-restaurante .perfil-setup-card {
+                padding: 20px;
+            }
+        }
+    </style>
+
+    <div class="perfil-setup-wrapper">
+
+        <!-- CABEÇALHO -->
+        <div class="perfil-setup-header">
+
+            <div class="perfil-setup-badge">
+                ✦ Perfil de Restaurante
+            </div>
+
+            <h1>
+                Vamos apresentar seu restaurante<br>
+                <span>ao mundo das parcerias.</span>
+            </h1>
+
+            <p>
+                Complete as informações do seu estabelecimento
+                para que os influenciadores possam conhecer seu negócio.
+            </p>
+
+        </div>
+
+        <div class="perfil-setup-grid">
+
+            <!-- CARD ESQUERDO -->
+            <div class="perfil-setup-card">
+
+                <div class="perfil-setup-card-title">
+
+                    <div class="perfil-setup-card-icon">
+                        🍽️
+                    </div>
+
+                    <div>
+                        <h2>Seu restaurante</h2>
+                        <p>Como seu estabelecimento aparecerá</p>
+                    </div>
+
+                </div>
+
+                <div class="perfil-avatar-setup">
+
+                <span id="restaurante-setup-placeholder">R</span>
+
+                <img
+                    id="restaurante-setup-preview"
+                    src=""
+                    alt="Prévia da foto do restaurante"
+                >
+
+            </div>
+
+                <p class="perfil-avatar-help">
+                    Sua foto poderá ser adicionada por meio
+                    de uma URL de imagem.
+                </p>
+
+                <div class="perfil-info-box">
+
+                    <strong>💡 Dica</strong>
+
+                    <p>
+                        Uma descrição clara e uma boa apresentação
+                        ajudam os influenciadores a conhecer seu
+                        restaurante antes de propor uma parceria.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD DIREITO - FORMULÁRIO -->
+            <div class="perfil-setup-card">
+
+                <div class="perfil-setup-card-title">
+
+                    <div class="perfil-setup-card-icon">
+                        ✏️
+                    </div>
+
+                    <div>
+                        <h2>Informações do restaurante</h2>
+                        <p>Preencha os dados do estabelecimento</p>
+                    </div>
+
+                </div>
+
+                <div class="perfil-form-grid">
+
+                    <!-- NOME -->
+                    <div class="perfil-field full">
+
+                        <label for="restaurante-setup-nome">
+                            Nome do restaurante
+                            <span>obrigatório</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="restaurante-setup-nome"
+                            placeholder="Ex.: Restaurante Sabor Caseiro"
+                            maxlength="100"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- CATEGORIA -->
+                    <div class="perfil-field">
+
+                        <label for="restaurante-setup-categoria">
+                            Categoria
+                            <span>obrigatório</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="restaurante-setup-categoria"
+                            placeholder="Ex.: Italiana"
+                            maxlength="100"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- TELEFONE -->
+                    <div class="perfil-field">
+
+                        <label for="restaurante-setup-telefone">
+                            Telefone
+                            <span>obrigatório</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="restaurante-setup-telefone"
+                            placeholder="(11) 99999-9999"
+                            maxlength="20"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- ENDEREÇO -->
+                    <div class="perfil-field full">
+
+                        <label for="restaurante-setup-endereco">
+                            Endereço
+                            <span>obrigatório</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="restaurante-setup-endereco"
+                            placeholder="Rua, número, bairro e cidade"
+                            maxlength="50"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- FOTO -->
+                    <div class="perfil-field full">
+
+                        <label for="restaurante-setup-foto">
+                            Foto do restaurante
+                            <span>opcional</span>
+                        </label>
+
+                        <input
+                            type="url"
+                            id="restaurante-setup-foto"
+                            placeholder="https://..."
+                            maxlength="500"
+                        >
+
+                        <div class="perfil-field-hint">
+                            Cole o endereço da imagem do seu restaurante.
+                        </div>
+
+                    </div>
+
+                    <!-- DESCRIÇÃO -->
+                    <div class="perfil-field full">
+
+                        <label for="restaurante-setup-descricao">
+                            Sobre o restaurante
+                            <span>obrigatório</span>
+                        </label>
+
+                        <textarea
+                            id="restaurante-setup-descricao"
+                            maxlength="500"
+                            placeholder="Conte um pouco sobre seu restaurante, sua especialidade e o que oferece aos clientes..."
+                            required
+                        ></textarea>
+
+                        <div class="perfil-field-hint">
+                            Máximo de 500 caracteres.
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- AÇÃO -->
+                <div class="perfil-setup-actions">
+
+                    <p>
+                        🔒 Seus dados ficam vinculados<br>
+                        somente à sua conta.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="perfil-btn-finalizar"
+                        onclick="criarPerfilRestaurante()"
+                    >
+                        Criar meu perfil →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: DASHBOARD INFLUENCIADOR
+═══════════════════════════════════════════ -->
+<div id="page-influencer" class="page">
+
+ <nav>
+  <div
+    class="logo"
+    onclick="showPage('page-influencer')"
+    style="cursor:pointer;"
+    >
+      Gastro<span>Link</span>
+    </div>
+
+    <div class="nav-right">
+      <input
+        type="text"
+        id="busca-restaurante-influencer"
+        class="search-box"
+        placeholder="Buscar restaurante..."
+      />
+
+      <button
+        class="notification-btn"
+        type="button"
+        onclick="showPage('page-notif-influencer')"
+        aria-label="Notificações"
+      >
+        <svg
+          class="notification-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 8C18 5.79 16.21 4 14 4H10C7.79 4 6 5.79 6 8V11.5C6 13.1 5.4 14.65 4.3 15.8L3 17.2H21L19.7 15.8C18.6 14.65 18 13.1 18 11.5V8Z"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9.5 20H14.5"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <span
+          class="notification-dot"
+          id="notification-dot-restaurante"
+          style="display: none;"
+        ></span>
+      </button>
+
+      <button
+          class="avatar-btn"
+          type="button"
+          id="nav-avatar-influencer"
+          onclick="showPage('page-perfil-influencer')"
+        >
+          <span id="nav-avatar-placeholder-i">I</span>
+
+          <img
+            id="nav-avatar-img-i"
+            src=""
+            alt="Foto do influencer"
+            style="display: none;"
+          />
+        </button>
+
+      <button
+        class="btn btn-secondary nav-logout"
+        type="button"
+        onclick="logout()"
+      >
+        Sair
+      </button>
+    </div>
+  </nav>
+
+  <div class="influencer-home-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="influencer-sidebar">
+
+      <div class="filter-header">
+        <h3>Filtros</h3>
+      </div>
+
+      <div class="filter-group">
+        <label for="filtro-categoria-influencer">
+          Categoria
+        </label>
+
+        <input
+          type="text"
+          id="filtro-categoria-influencer"
+          placeholder="Ex.: Japonês"
+        />
+      </div>
+
+      <div class="filter-group">
+        <label for="filtro-localizacao-influencer">
+          Localização
+        </label>
+
+        <input
+          type="text"
+          id="filtro-localizacao-influencer"
+          placeholder="Ex.: São Paulo"
+        />
+      </div>
+      
+      <button
+        type="button"
+        class="btn btn-primary"
+        onclick="applyFilter()"
+    >
+        Aplicar filtros
+    </button>
+
+    <button
+        type="button"
+        class="btn btn-secondary"
+        onclick="resetFilters()"
+    >
+        Limpar filtros
+</button>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="influencer-home-content">
+
+      <div class="restaurant-home-header">
+
+        <span class="home-eyebrow">
+          GASTROLINK • OPORTUNIDADES
+        </span>
+
+        <h1>Encontre seu próximo parceiro</h1>
+
+        <p>
+          Descubra restaurantes, conheça novos estabelecimentos
+          e encontre oportunidades para criar parcerias.
+        </p>
+
+      </div>
+
+      <div class="section-title">
+
+        <h2>Restaurantes disponíveis</h2>
+
+        <p>
+          Explore os estabelecimentos cadastrados e encontre restaurantes
+          que combinem com seu conteúdo e estilo.
+        </p>
+
+      </div>
+
+      <!-- GRID DOS RESTAURANTES -->
+      <div id="restaurantes-grid-influencer"
+           class="influencer-restaurants-grid">
+      </div>
+
+    </main>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: DASHBOARD RESTAURANTE
+═══════════════════════════════════════════ -->
+<div id="page-restaurante" class="page">
+
+  <nav>
+    <div
+      class="logo"
+      onclick="showPage('page-restaurante')"
+      style="cursor:pointer;"
+    >
+      Gastro<span>Link</span>
+    </div>
+
+    <div class="nav-right">
+
+      <input
+        type="text"
+        id="busca-influencer-restaurante"
+        class="search-box"
+        placeholder="Buscar influenciador..."
+      />
+
+      <button
+        class="notification-btn"
+        type="button"
+        onclick="abrirNotificacoesRestaurante()"
+        aria-label="Notificações"
+      >
+        <svg
+          class="notification-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 8C18 5.79 16.21 4 14 4H10C7.79 4 6 5.79 6 8V11.5C6 13.1 5.4 14.65 4.3 15.8L3 17.2H21L19.7 15.8C18.6 14.65 18 13.1 18 11.5V8Z"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9.5 20H14.5"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <span class="notification-dot"></span>
+      </button>
+
+      <button
+    class="avatar-btn"
+    type="button"
+    id="nav-avatar-restaurante"
+    onclick="showPage('page-meu-restaurante')"
+    aria-label="Meu restaurante"
+      >
+          <span id="nav-avatar-placeholder-r">R</span>
+
+          <img
+              id="nav-avatar-img-r"
+              src=""
+              alt="Foto do restaurante"
+              style="display: none;"
+          />
+      </button>
+
+      <button
+        class="btn btn-secondary nav-logout"
+        type="button"
+        onclick="logout()"
+      >
+        Sair
+      </button>
+
+    </div>
+  </nav>
+
+  <div class="restaurant-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="filter-header">
+        <h3>Filtros</h3>
+      </div>
+
+      <div class="filter-group">
+
+        <label for="filtro-seguidores">
+          Número de seguidores
+        </label>
+
+        <select id="filtro-seguidores" onchange="applyFilter()">
+          <option value="0">Todos</option>
+          <option value="5000">5.000+</option>
+          <option value="10000">10.000+</option>
+          <option value="50000">50.000+</option>
+          <option value="100000">100.000+</option>
+        </select>
+
+      </div>
+
+      <div class="filter-group">
+
+        <label for="filtro-ordenacao">
+          Ordenar por
+        </label>
+
+        <select id="filtro-ordenacao" onchange="applyFilter()">
+          <option value="padrao">Padrão</option>
+          <option value="seguidores-desc">Mais seguidores</option>
+          <option value="seguidores-asc">Menos seguidores</option>
+          <option value="nome-asc">Nome (A-Z)</option>
+          <option value="nome-desc">Nome (Z-A)</option>
+        </select>
+
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary"
+        onclick="applyFilter()"
+    >
+        Aplicar filtros
+    </button>
+
+    <button
+        type="button"
+        class="btn btn-secondary"
+        onclick="resetFilters()"
+    >
+        Limpar filtros
+    </button>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="restaurant-home-content">
+
+      
+      <div class="restaurant-home-header">
+
+        <span class="dashboard-eyebrow">
+          GASTROLINK • PARCERIAS
+        </span>
+
+        <h1>Encontre seu próximo parceiro</h1>
+
+        <p>
+          Conecte seu restaurante a criadores de conteúdo
+          e transforme novas ideias em oportunidades.
+        </p>
+
+      </div>
+
+      <div class="restaurant-dashboard-section-heading">
+
+        <div>
+          <h2>Influenciadores disponíveis</h2>
+
+          <p>
+            Explore os perfis e encontre alguém que combine
+            com a identidade do seu restaurante.
+          </p>
+        </div>
+
+      </div>
+
+      <div
+        id="influencers-grid"
+        class="influencers-grid"
+      >
+
+        <div class="empty-influencers">
+
+          <div class="empty-icon">👥</div>
+
+          <h3>Carregando influenciadores...</h3>
+
+          <p>
+            Aguarde enquanto buscamos os perfis disponíveis.
+          </p>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: NOTIFICAÇÕES RESTAURANTE
+═══════════════════════════════════════════ -->
+
+<div id="page-notif-restaurante" class="page">
+
+  <nav>
+    <div
+      class="logo"
+      onclick="showPage('page-restaurante')"
+      style="cursor:pointer;"
+    >
+      Gastro<span>Link</span>
+    </div>
+
+    <div class="nav-right">
+      <button
+        class="btn btn-secondary"
+        onclick="showPage('page-restaurante')"
+      >
+        ← Voltar
+      </button>
+    </div>
+  </nav>
+
+  <div class="container" style="max-width:700px">
+
+    <div class="section-title">
+      Notificações
+    </div>
+
+    <p class="section-sub">
+      Acompanhe as solicitações e acordos em andamento
+    </p>
+
+    <!-- Notificações serão carregadas pela API -->
+    <div id="notificacoes-restaurante"></div>
+
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: NOTIFICAÇÕES INFLUENCER
+═══════════════════════════════════════════ -->
+<div id="page-notif-influencer" class="page">
+
+  <nav>
+
+    <div
+      class="logo"
+      onclick="showPage('page-influencer')"
+      style="cursor:pointer;"
+    >
+      Gastro<span>Link</span>
+    </div>
+
+    <div class="nav-right">
+
+      <button
+        class="btn btn-secondary"
+        onclick="showPage('page-influencer')"
+      >
+        ← Voltar
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <div class="container" style="max-width:700px">
+
+    <div class="section-title">
+      Notificações
+    </div>
+
+    <p class="section-sub">
+      Acompanhe suas propostas e parcerias
+    </p>
+
+    <div id="notificacoes-influencer"></div>
+
+  </div>
+
+</div>
+<!-- ═══════════════════════════════════════════
+     PAGE: PERFIL RESTAURANTE — VISUALIZAÇÃO
+═══════════════════════════════════════════ -->
+<div id="page-perfil-restaurante" class="page">
+
+  <nav>
+    <div
+      class="logo"
+      onclick="showPage('page-influencer')"
+      style="cursor:pointer;"
+    >
+      Gastro<span>Link</span>
+    </div>
+
+    <div class="nav-right">
+      <button
+        class="btn btn-secondary"
+        type="button"
+        onclick="showPage('page-influencer')"
+      >
+        ← Voltar
+      </button>
+    </div>
+  </nav>
+
+
+  <div class="restaurant-profile-page">
+
+    <!-- FOTO PRINCIPAL -->
+    <div class="restaurant-profile-cover">
+
+      <img
+        id="perfil-foto-r"
+        src=""
+        alt="Foto do restaurante"
+      />
+
+      <div
+        id="perfil-sem-foto-r"
+        class="restaurant-profile-no-photo"
+      >
+        🍽️
+      </div>
+
+    </div>
+
+
+    <!-- INFORMAÇÕES PRINCIPAIS -->
+    <div class="restaurant-profile-content">
+
+      <div class="restaurant-profile-header">
+
+        <div>
+
+          <span
+            id="perfil-categoria-r"
+            class="influencer-restaurant-category"
+          >
+            Categoria
+          </span>
+
+          <h1 id="perfil-nome-r">
+            Carregando...
+          </h1>
+
+        </div>
+
+        <span class="status status-accepted">
+          ✓ Restaurante
+        </span>
+
+      </div>
+
+
+      <!-- SOBRE -->
+      <div class="restaurant-profile-card">
+
+        <h2>Sobre o restaurante</h2>
+
+        <p id="perfil-descricao-r">
+          Carregando...
+        </p>
+
+      </div>
+
+
+      <!-- INFORMAÇÕES -->
+      <div class="restaurant-profile-card">
+
+        <h2>Informações</h2>
+
+        <div class="restaurant-profile-info">
+
+          <div class="restaurant-profile-info-item">
+
+            <span class="restaurant-profile-info-icon">
+              📍
+            </span>
+
+            <div>
+              <strong>Endereço</strong>
+
+              <p id="perfil-endereco-r">
+                Carregando...
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="restaurant-profile-info-item">
+
+            <span class="restaurant-profile-info-icon">
+              📞
+            </span>
+
+            <div>
+              <strong>Telefone</strong>
+
+              <p id="perfil-telefone-r">
+                Carregando...
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- AÇÃO -->
+      <div class="restaurant-profile-action">
+
+        <button
+          class="btn btn-primary"
+          type="button"
+          onclick="abrirProposta()"
+        >
+          Enviar proposta de parceria
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- ═══════════════════════════════════════════
+     PAGE: MEU RESTAURANTE
+═══════════════════════════════════════════ -->
+<div id="page-meu-restaurante" class="page">
+
+  <nav>
+
+    <div
+      class="logo"
+      onclick="showPage('page-restaurante')"
+      style="cursor:pointer;"
+    >
+      Gastro<span>Link</span>
+    </div>
+
+    <div class="nav-right">
+
+      <button
+        class="btn btn-secondary"
+        type="button"
+        onclick="showPage('page-restaurante')"
+      >
+        ← Voltar
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  
+  <div class="influencer-profile-page">
+
+  <!-- CABEÇALHO -->
+  <section class="influencer-profile-header">
+
+    <div
+      class="profile-avatar influencer-profile-avatar"
+      id="perfil-avatar-r"
+    >
+      <span id="perfil-avatar-placeholder-r">R</span>
+
+      <img
+        id="perfil-avatar-img-r"
+        src=""
+        alt="Foto do restaurante"
+        style="display: none;"
+      />
+    </div>
+
+    <div class="influencer-profile-main">
+
+      <span class="influencer-profile-label">
+        MEU RESTAURANTE
+      </span>
+
+      <h1 id="meu-restaurante-nome">
+        Meu Restaurante
+      </h1>
+
+      <p
+        id="meu-restaurante-categoria"
+        class="influencer-profile-instagram"
+      >
+        Categoria
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CONTEÚDO -->
+
+
+
+    <!-- CONTEÚDO -->
+    <div class="influencer-profile-content">
+
+
+      <!-- SOBRE -->
+      <section class="influencer-profile-about">
+
+        <h2>Sobre o restaurante</h2>
+
+        <p id="meu-restaurante-descricao">
+          A descrição do seu restaurante aparecerá aqui.
+        </p>
+
+      </section>
+
+
+      <!-- INFORMAÇÕES -->
+      <section class="influencer-profile-about">
+
+        <h2>Informações</h2>
+
+        <p>
+          📍
+          <strong>Endereço</strong>
+        </p>
+
+        <p id="meu-restaurante-endereco">
+          Endereço não informado.
+        </p>
+
+        <br>
+
+        <p>
+          📞
+          <strong>Telefone</strong>
+        </p>
+
+        <p id="meu-restaurante-telefone">
+          Telefone não informado.
+        </p>
+
+      </section>
+
+
+      <!-- EDITAR PERFIL -->
+      <section class="influencer-profile-edit">
+
+        <div class="influencer-profile-section-title">
+
+          <div>
+
+            <h2>Editar restaurante</h2>
+
+            <p>
+              Atualize as informações para apresentar melhor
+              seu restaurante aos influenciadores.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="influencer-profile-form">
+
+
+          <!-- NOME -->
+          <div class="form-group">
+
+            <label for="restaurante-edit-nome">
+              Nome
+            </label>
+
+            <input
+              type="text"
+              id="restaurante-edit-nome"
+              placeholder="Nome do restaurante"
+            />
+
+          </div>
+
+
+          <!-- CATEGORIA -->
+          <div class="form-group">
+
+            <label for="restaurante-edit-categoria">
+              Categoria
+            </label>
+
+            <input
+              type="text"
+              id="restaurante-edit-categoria"
+              placeholder="Ex: Gastronomia"
+            />
+
+          </div>
+
+
+          <!-- ENDEREÇO -->
+          <div class="form-group">
+
+            <label for="restaurante-edit-endereco">
+              Endereço
+            </label>
+
+            <input
+              type="text"
+              id="restaurante-edit-endereco"
+              placeholder="Endereço do restaurante"
+            />
+
+          </div>
+
+
+          <!-- TELEFONE -->
+          <div class="form-group">
+
+            <label for="restaurante-edit-telefone">
+              Telefone
+            </label>
+
+            <input
+              type="text"
+              id="restaurante-edit-telefone"
+              placeholder="(11) 99999-9999"
+            />
+
+          </div>
+
+
+          <!-- FOTO -->
+          <div class="form-group">
+
+            <label for="restaurante-edit-foto">
+              Foto do restaurante (URL)
+            </label>
+
+            <input
+              type="url"
+              id="restaurante-edit-foto"
+              placeholder="https://..."
+            />
+
+          </div>
+
+
+          <!-- DESCRIÇÃO -->
+          <div
+            class="form-group influencer-profile-description"
+          >
+
+            <label for="restaurante-edit-descricao">
+              Sobre o restaurante
+            </label>
+
+            <textarea
+              id="restaurante-edit-descricao"
+              placeholder="Conte um pouco sobre seu restaurante..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- BOTÃO -->
+        <div class="influencer-profile-actions">
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="salvarMeuRestaurante()"
+          >
+            Salvar alterações
+          </button>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE: PERFIL INFLUENCER
+═══════════════════════════════════════════ -->
+<div id="page-perfil-influencer" class="page">
+
+  <nav>
+    <div
+      class="logo"
+      onclick="showPage('page-influencer')"
+      style="cursor:pointer;"
+    >
+      Gastro<span>Link</span>
+    </div>
+
+    <div class="nav-right">
+      <button
+        class="btn btn-secondary"
+        type="button"
+        onclick="showPage('page-influencer')"
+      >
+        ← Voltar
+      </button>
+    </div>
+  </nav>
+
+  <div class="influencer-profile-page">
+
+    <!-- CABEÇALHO -->
+    <section class="influencer-profile-header">
+
+      <div
+        class="profile-avatar influencer-profile-avatar"
+        id="perfil-avatar-i"
+      >
+        <span id="perfil-avatar-placeholder-i">I</span>
+
+        <img
+          id="perfil-avatar-img-i"
+          src=""
+          alt="Foto do influencer"
+        />
+      </div>
+
+      <div class="influencer-profile-main">
+
+        <span class="influencer-profile-label">
+          MEU PERFIL
+        </span>
+
+        <h1 id="perfil-nome-i">
+          Meu Perfil
+        </h1>
+
+        <p
+          id="perfil-instagram-i"
+          class="influencer-profile-instagram"
+        >
+          @instagram
+        </p>
+
+        <div class="influencer-profile-stats">
+
+          <div>
+            <strong id="perfil-seguidores-i">0</strong>
+            <span>seguidores</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTEÚDO -->
+    <div class="influencer-profile-content">
+
+      <!-- SOBRE -->
+      <section class="influencer-profile-about">
+
+        <h2>Sobre mim</h2>
+
+        <p id="perfil-descricao-i">
+          Sua descrição aparecerá aqui.
+        </p>
+
+      </section>
+
+
+      <!-- FORMULÁRIO -->
+      <section class="influencer-profile-edit">
+
+        <div class="influencer-profile-section-title">
+          <div>
+            <h2>Editar perfil</h2>
+            <p>
+              Atualize suas informações para que os restaurantes
+              conheçam melhor você.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="influencer-profile-form">
+
+          <!-- NOME -->
+          <div class="form-group">
+
+            <label for="perfil-edit-nome">
+              Nome
+            </label>
+
+            <input
+              type="text"
+              id="perfil-edit-nome"
+              placeholder="Seu nome ou nome artístico"
+            />
+
+          </div>
+
+
+          <!-- INSTAGRAM -->
+          <div class="form-group">
+
+            <label for="perfil-edit-instagram">
+              Instagram
+            </label>
+
+            <input
+              type="text"
+              id="perfil-edit-instagram"
+              placeholder="@seuinstagram"
+            />
+
+          </div>
+
+
+          <!-- SEGUIDORES -->
+          <div class="form-group">
+
+            <label for="perfil-edit-seguidores">
+              Seguidores
+            </label>
+
+            <input
+              type="number"
+              id="perfil-edit-seguidores"
+              placeholder="Ex: 45000"
+              min="0"
+            />
+
+          </div>
+
+
+          <!-- TELEFONE -->
+          <div class="form-group">
+
+            <label for="perfil-edit-telefone">
+              Telefone
+            </label>
+
+            <input
+              type="text"
+              id="perfil-edit-telefone"
+              placeholder="(11) 99999-9999"
+            />
+
+          </div>
+
+
+          <!-- FOTO -->
+          <div class="form-group">
+
+            <label for="perfil-edit-foto">
+              Foto de perfil (URL)
+            </label>
+
+            <input
+              type="url"
+              id="perfil-edit-foto"
+              placeholder="https://..."
+            />
+
+          </div>
+
+
+          <!-- DESCRIÇÃO -->
+          <div class="form-group influencer-profile-description">
+
+            <label for="perfil-edit-descricao">
+              Sobre você
+            </label>
+
+            <textarea
+              id="perfil-edit-descricao"
+              placeholder="Conte um pouco sobre você e seu conteúdo..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <div class="influencer-profile-actions">
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="salvarPerfil()"
+          >
+            Salvar alterações
+          </button>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MODALS
+═══════════════════════════════════════════ -->
+
+<!-- Modal: Login -->
+<div class="modal-overlay" id="modal-login">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-login')">✕</button>
+
+    <h2>Entrar na plataforma</h2>
+
+    <div class="form-group">
+      <label for="login-email">E-mail</label>
+      <input
+        type="email"
+        id="login-email"
+        placeholder="seu@email.com"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="login-senha">Senha</label>
+      <input
+        type="password"
+        id="login-senha"
+        placeholder="••••••••"
+        required
+      />
+    </div>
+
+    <button
+      class="btn btn-primary btn-full btn-lg"
+      onclick="doLogin()"
+      style="margin-top:0.5rem">
+      Entrar
+    </button>
+
+    <div class="divider"></div>
+
+    <p style="text-align:center;font-size:0.85rem;color:var(--muted)">
+      Não tem conta?
+      <a
+        href="#"
+        onclick="switchToRegister()"
+        style="color:var(--accent)">
+        Cadastre-se grátis
+      </a>
+    </p>
+  </div>
+</div>
+
+<!-- Modal: Cadastro -->
+<div class="modal-overlay" id="modal-register">
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            onclick="closeModal('modal-register')">
+            ✕
+        </button>
+
+        <h2>Criar sua conta</h2>
+
+        <div class="form-group">
+            <label for="register-tipo">Tipo de conta</label>
+
+            <select id="register-tipo">
+    <option value="1">Restaurante</option>
+    <option value="2">Influenciador</option>
+        </select>
+        </div>
+
+        <div class="form-group">
+            <label for="reg-nome">Nome</label>
+
+            <input
+                type="text"
+                id="reg-nome"
+                placeholder="Nome do restaurante ou nome artístico"
+                required
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="reg-email">E-mail</label>
+
+            <input
+                type="email"
+                id="reg-email"
+                placeholder="seu@email.com"
+                required
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="reg-senha">Senha</label>
+
+            <input
+                type="password"
+                id="reg-senha"
+                placeholder="Mínimo 8 caracteres"
+                required
+            />
+        </div>
+
+            <button
+        type="button"
+        id="btn-register"
+        class="btn btn-success btn-full btn-lg"
+        style="margin-top:0.5rem">
+
+        Criar conta
+
+        </button>
+
+
+        <div class="divider"></div>
+
+        <p style="text-align:center;font-size:0.85rem;color:var(--muted)">
+            Já tem conta?
+
+            <a
+                href="#"
+                onclick="switchToLogin()"
+                style="color:var(--accent)">
+
+                Entrar
+
+            </a>
+        </p>
+
+    </div>
+</div>
+
+<!-- Modal: Solicitar Parceria (Restaurante → Influenciador) -->
+<div class="modal-overlay" id="modal-parceria-restaurante">
+
+  <div class="modal parceria-modal-v2">
+
+    <!-- FECHAR -->
+    <button
+      class="modal-close parceria-close"
+      type="button"
+      onclick="closeModal('modal-parceria-restaurante')"
+    >
+      ✕
+    </button>
+
+
+    <!-- CABEÇALHO DO INFLUENCIADOR -->
+    <div class="parceria-hero">
+
+      <div class="parceria-hero-photo">
+
+        <img
+          id="modal-influencer-foto"
+          src=""
+          alt="Foto do influenciador"
+        />
+
+        <div
+          id="modal-influencer-sem-foto"
+          class="parceria-photo-placeholder"
+        >
+          👤
+        </div>
+
+      </div>
+
+
+      <div class="parceria-hero-info">
+
+        <span class="parceria-label">
+          INFLUENCIADOR
+        </span>
+
+        <h2 id="modal-influencer-nome">
+          Influenciador
+        </h2>
+
+        <p
+          id="modal-influencer-instagram"
+          class="parceria-instagram"
+        >
+          @instagram
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ESTATÍSTICAS -->
+    <div class="parceria-stats">
+
+      <div class="parceria-stat">
+
+        <span class="parceria-stat-icon">
+          👥
+        </span>
+
+        <div>
+
+          <strong id="modal-influencer-seguidores">
+            0
+          </strong>
+
+          <span>
+            seguidores
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="parceria-stat">
+
+        <span class="parceria-stat-icon">
+          📸
+        </span>
+
+        <div>
+
+          <strong>
+            Instagram
+          </strong>
+
+          <span>
+            perfil social
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SOBRE O INFLUENCIADOR -->
+    <div class="parceria-about">
+
+      <div class="parceria-heading">
+
+        <span class="parceria-heading-line"></span>
+
+        <h3>
+          Sobre o influenciador
+        </h3>
+
+      </div>
+
+      <p id="modal-influencer-descricao">
+        Este influenciador ainda não possui uma descrição.
+      </p>
+
+    </div>
+
+
+    <!-- DIVISOR -->
+    <div class="parceria-divider"></div>
+
+
+    <!-- PROPOSTA -->
+    <div class="parceria-proposal">
+
+      <div class="parceria-heading">
+
+        <span class="parceria-heading-line"></span>
+
+        <div>
+
+          <h3>
+            Proponha uma parceria
+          </h3>
+
+          <p>
+            Conte ao influenciador como você imagina essa parceria.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="parceria-textarea-wrapper">
+
+        <textarea
+          id="parceria-descricao"
+          maxlength="500"
+          placeholder="Ex: Gostaríamos de convidar você para conhecer nosso restaurante e criar um conteúdo especial para os seus seguidores..."
+        ></textarea>
+
+        <span
+          id="parceria-contador"
+          class="parceria-counter"
+        >
+          0 / 500
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- BOTÃO -->
+    <button
+      type="button"
+      class="btn btn-primary parceria-submit"
+      onclick="enviarParceriaRestaurante()"
+    >
+
+      <span>
+        Enviar proposta
+      </span>
+
+      <span class="parceria-arrow">
+        →
+      </span>
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- Modal: Ver solicitação (Restaurante recebe de influencer) -->
+<div class="modal-overlay" id="modal-parceria-r">
+
+  <div class="modal">
+
+    <button
+      class="modal-close"
+      onclick="closeModal('modal-parceria-r')"
+    >
+      ✕
+    </button>
+
+    <h2>Solicitação de Parceria</h2>
+
+    <div class="alert alert-info">
+      <strong>Carregando proposta...</strong>
+    </div>
+
+    <p style="font-size:0.9rem;margin-bottom:1rem">
+      <strong>Proposta:</strong>
+      Carregando...
+    </p>
+
+    <p style="font-size:0.9rem;margin-bottom:1rem">
+      <strong>Data:</strong>
+      Carregando...
+    </p>
+
+    <p style="font-size:0.9rem;margin-bottom:1.5rem">
+      <strong>Status:</strong>
+      <span class="tag tag-orange">
+        Pendente
+      </span>
+    </p>
+
+    <div class="divider"></div>
+
+    <div style="display:flex;gap:1rem">
+
+      <button
+        class="btn btn-success"
+        onclick="responderParceria('aceitar')"
+        style="flex:1"
+      >
+        ✓ Aceitar
+      </button>
+
+      <button
+        class="btn btn-danger"
+        onclick="responderParceria('recusar')"
+        style="flex:1"
+      >
+        ✕ Recusar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Modal: Influenciador envia proposta ao restaurante -->
+<div class="modal-overlay" id="modal-proposta-influencer">
+  <div class="modal parceria-modal-v2">
+
+    <button
+      class="modal-close parceria-close"
+      type="button"
+      onclick="closeModal('modal-proposta-influencer')"
+    >
+      ✕
+    </button>
+
+    <div class="parceria-hero">
+      <div>
+        <span class="tag tag-orange">Nova parceria</span>
+        <h2>Propor parceria</h2>
+        <p>Apresente sua ideia para o restaurante.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="proposta-influencer-descricao">
+        Descrição da proposta
+      </label>
+
+      <textarea
+        id="proposta-influencer-descricao"
+        maxlength="500"
+        rows="5"
+        placeholder="Descreva como você gostaria de realizar essa parceria..."
+      ></textarea>
+
+      <small id="proposta-influencer-contador">
+        0/500 caracteres
+      </small>
+    </div>
+
+    <div class="divider"></div>
+
+    <button
+      class="btn btn-primary"
+      type="button"
+      onclick="enviarPropostaInfluencer()"
+      style="width:100%"
+    >
+      Enviar proposta
+    </button>
+
+  </div>
+</div>
+
+<!-- Modal: Responder proposta (Influencer recebe de restaurante) -->
+<div class="modal-overlay" id="modal-responder-influencer">
+
+  <div class="modal">
+
+    <button
+      class="modal-close"
+      onclick="closeModal('modal-responder-influencer')"
+    >
+      ✕
+    </button>
+
+    <h2>Proposta Recebida</h2>
+
+    <div class="alert alert-info">
+      <strong>Carregando proposta...</strong>
+    </div>
+
+    <p style="font-size:0.9rem;margin-bottom:1rem">
+      <strong>Proposta:</strong>
+      Carregando...
+    </p>
+
+    <p style="font-size:0.9rem;margin-bottom:1rem">
+      <strong>Data:</strong>
+      Carregando...
+    </p>
+
+    <p style="font-size:0.9rem;margin-bottom:1.5rem">
+      <strong>Status:</strong>
+      <span class="tag tag-orange">
+        Pendente
+      </span>
+    </p>
+
+    <div class="divider"></div>
+
+    <div style="display:flex;gap:1rem">
+
+      <button
+        class="btn btn-success"
+        onclick="responderInfluencer('aceitar')"
+        style="flex:1"
+      >
+        ✓ Aceitar proposta
+      </button>
+
+      <button
+        class="btn btn-danger"
+        onclick="responderInfluencer('recusar')"
+        style="flex:1"
+      >
+        ✕ Recusar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✓ Ação realizada com sucesso!</div>
+
+
+<script>
+
+function showModal(id) {
+
+  const modal = document.getElementById(id);
+
+  if (!modal) {
+    console.error("❌ Modal não encontrado:", id);
+    return;
+  }
+
+  modal.classList.add("open");
+  modal.style.display = "";
+
+  console.log("✅ Modal aberto:", id);
+}
+
+
+function closeModal(id) {
+
+  const modal = document.getElementById(id);
+
+  if (!modal) {
+    console.error("❌ Modal não encontrado:", id);
+    return;
+  }
+
+  modal.classList.remove("open");
+  modal.style.display = "";
+
+  console.log("✅ Modal fechado:", id);
+}
+
+
+function closeAllModals() {
+
+  document.querySelectorAll(".modal-overlay").forEach(modal => {
+    modal.classList.remove("open");
+    modal.style.display = "";
+  });
+
+}
+
+
+function showLogin() {
+
+  console.log("🔥 CLIQUEI EM ENTRAR!");
+
+  closeAllModals();
+  showModal("modal-login");
+
+}
+
+function showRegister() {
+
+  console.log("🔥 CLIQUEI EM CADASTRO!");
+
+  closeAllModals();
+  showModal("modal-register");
+
+}
+
+
+function showPage(pageId) {
+
+  console.log("📄 Mudando para página:", pageId);
+
+  const page = document.getElementById(pageId);
+
+  if (!page) {
+    console.error("❌ Página não encontrada:", pageId);
+    return;
+  }
+
+  document.querySelectorAll(".page").forEach(p => {
+    p.classList.remove("active");
+  });
+
+  page.classList.add("active");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  console.log("✅ Página aberta:", pageId);
+}
+
+console.log("🔥🔥🔥 JAVASCRIPT CARREGOU! 🔥🔥🔥");
+
+// ═══════════════════════════════════════
+// LOGIN REAL
+// ═══════════════════════════════════════
+async function doLogin() {
+
+  const email = document.getElementById("login-email").value.trim();
+  const senha = document.getElementById("login-senha").value;
+
+  if (!email || !senha) {
+    showToast("❌ Preencha e-mail e senha");
+    return;
+  }
+
+  console.log("════════════════════════════════");
+  console.log("📤 TENTANDO LOGIN");
+  console.log("📧 E-mail:", email);
+  console.log("════════════════════════════════");
+
+  try {
+
+    const resposta = await fetch(
+      "https://localhost:7111/api/Auth/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          email: email,
+          senha: senha
+        })
+      }
+    );
+
+    const texto = await resposta.text();
+
+    console.log("📡 STATUS LOGIN:", resposta.status);
+    console.log("📥 RESPOSTA BRUTA LOGIN:", texto);
+
+    let dados = null;
+
+    if (texto) {
+      try {
+        dados = JSON.parse(texto);
+      } catch (erro) {
+        console.error("❌ Resposta não é JSON:", texto);
+      }
+    }
+
+    console.log("📦 OBJETO RETORNADO PELO LOGIN:", dados);
+
+    if (!resposta.ok) {
+
+      const mensagem =
+        dados?.message ||
+        dados?.title ||
+        dados?.error ||
+        `Erro HTTP ${resposta.status}`;
+
+      console.error("❌ LOGIN RECUSADO:", dados);
+
+      showToast("❌ " + mensagem);
+
+      return;
+    }
+
+    // =====================================================
+    // PROCURAR O TOKEN EM POSSÍVEIS FORMATOS
+    // =====================================================
+
+    const token =
+      dados?.token ||
+      dados?.accessToken ||
+      dados?.access_token ||
+      dados?.data?.token ||
+      dados?.data?.accessToken ||
+      dados?.user?.token ||
+      dados?.usuario?.token;
+
+    if (!token) {
+
+      console.error("❌ LOGIN FUNCIONOU, MAS NÃO ENCONTREI TOKEN.");
+      console.error("📦 RESPOSTA COMPLETA:", dados);
+
+      showToast(
+        "❌ A API aceitou o login, mas não retornou o token."
+      );
+
+      return;
+    }
+
+    // Salva token
+    localStorage.setItem("token", token);
+
+    // Salva resposta completa
+    localStorage.setItem(
+      "usuario",
+      JSON.stringify(dados)
+    );
+
+    console.log("✅ TOKEN SALVO NO LOCALSTORAGE");
+
+    closeModal("modal-login");
+
+    showToast("✅ Login realizado com sucesso!");
+
+    // =====================================================
+    // TENTAR DESCOBRIR A ROLE
+    // =====================================================
+
+    const role =
+      dados?.role ??
+      dados?.tipo ??
+      dados?.tipoConta ??
+      dados?.tipoUsuario ??
+      dados?.user?.role ??
+      dados?.user?.tipo ??
+      dados?.user?.tipoConta ??
+      dados?.user?.tipoUsuario ??
+      dados?.usuario?.role ??
+      dados?.usuario?.tipo ??
+      dados?.usuario?.tipoConta ??
+      dados?.usuario?.tipoUsuario ??
+      dados?.data?.role ??
+      dados?.data?.tipo ??
+      dados?.data?.tipoConta ??
+      dados?.data?.tipoUsuario;
+
+    console.log("👤 ROLE ENCONTRADA:", role);
+
+    // =====================================================
+    // RESTAURANTE
+    // =====================================================
+
+    if (
+      role === 1 ||
+      role === "1" ||
+      role === "Restaurante" ||
+      role === "restaurante"
+    ) {
+
+      console.log("🏪 USUÁRIO É RESTAURANTE");
+
+      await carregarRestaurantes();
+
+      return;
+    }
+
+    // =====================================================
+    // INFLUENCIADOR
+    // =====================================================
+
+        if (
+        role === 2 ||
+        role === "2" ||
+        role === "Influenciador" ||
+        role === "influenciador"
+      ) {
+
+        console.log("🎥 USUÁRIO É INFLUENCIADOR");
+
+        showPage("page-influencer");
+
+        await carregarRestaurantes();
+        await carregarMinhasPropostas();
+        await carregarMeuPerfil();
+        return;
+}
+
+    // =====================================================
+    // NÃO IDENTIFICOU
+    // =====================================================
+
+    console.error("════════════════════════════════");
+    console.error("❌ NÃO CONSEGUI IDENTIFICAR A ROLE");
+    console.error("📦 RESPOSTA DA API:");
+    console.error(dados);
+    console.error("════════════════════════════════");
+
+    showToast(
+      "⚠️ Login realizado, mas não foi possível identificar o tipo de conta."
+    );
+
+  } catch (erro) {
+
+    console.error("🔥 ERRO NO LOGIN:", erro);
+
+    showToast(
+      "❌ Não foi possível conectar com a API"
+    );
+  }
+}
+
+async function criarPerfilInfluencer() {
+
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    showToast("❌ Você precisa estar logado.");
+    return;
+  }
+
+  const nome = document.getElementById("perfil-nome").value.trim();
+  const instagram = document.getElementById("perfil-instagram").value.trim();
+  const descricao = document.getElementById("perfil-descricao").value.trim();
+  const seguidoresTexto = document.getElementById("perfil-seguidores").value;
+  const telefone = document.getElementById("perfil-telefone").value.trim();
+  const fotoUrl = document.getElementById("perfil-foto").value.trim();
+
+  if (!nome) {
+    showToast("❌ Informe seu nome.");
+    return;
+  }
+
+  if (!instagram) {
+    showToast("❌ Informe seu Instagram.");
+    return;
+  }
+
+  const seguidores = seguidoresTexto === ""
+    ? 0
+    : Number(seguidoresTexto);
+
+  if (seguidores < 0) {
+    showToast("❌ O número de seguidores não pode ser negativo.");
+    return;
+  }
+
+  const dados = {
+    nome: nome,
+    descricao: descricao || null,
+    instagram: instagram,
+    seguidores: seguidores,
+    telefone: telefone || null,
+    fotoUrl: fotoUrl || null
+  };
+
+  console.log("📤 CRIANDO PERFIL INFLUENCER:", dados);
+
+  try {
+
+    const response = await fetch(
+      "https://localhost:7111/api/Influencer",
+      {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(dados)
+      }
+    );
+
+    console.log("📡 STATUS CRIAR PERFIL:", response.status);
+
+    if (!response.ok) {
+
+    const erro = await response.text();
+
+    console.error("❌ STATUS:", response.status);
+    console.error("❌ RESPOSTA DA API:", erro);
+
+    throw new Error(
+        `Erro HTTP ${response.status}: ${erro}`
+        );
+    }
+
+    const influencer = await response.json();
+
+      console.log("✅ PERFIL CRIADO:", influencer);
+
+      window.meuInfluencerId = influencer.id;
+
+      showToast("✅ Perfil criado com sucesso!");
+
+      showPage("page-influencer");
+
+      await carregarMeuPerfil();
+
+  } catch (error) {
+
+    console.error("🔥 ERRO AO CRIAR PERFIL:", error);
+
+    showToast("❌ Erro ao conectar com a API.");
+  }
+}
+
+// Cache dos restaurantes vindos da API
+let restaurantesCache = [];
+let restauranteSelecionado = null;
+
+function renderRestaurantes(restaurantes) {
+
+  const grid = document.getElementById("restaurantes-grid");
+
+  if (!grid) {
+    console.error("❌ Elemento #restaurantes-grid não encontrado.");
+    return;
+  }
+
+  grid.innerHTML = "";
+
+  if (!restaurantes || restaurantes.length === 0) {
+
+    grid.innerHTML = `
+      <div class="empty-restaurants">
+        <div class="empty-icon">🍽️</div>
+        <h3>Nenhum restaurante encontrado</h3>
+        <p>Quando novos estabelecimentos forem cadastrados, eles aparecerão aqui.</p>
+      </div>
+    `;
+
+    return;
+  }
+
+  restaurantes.forEach(restaurante => {
+
+    // Compatível tanto com JSON camelCase quanto PascalCase
+    const nome =
+      restaurante.nome ??
+      restaurante.Nome ??
+      "Restaurante sem nome";
+
+    const descricao =
+      restaurante.descricao ??
+      restaurante.Descricao ??
+      "Nenhuma descrição informada.";
+
+    const endereco =
+      restaurante.endereco ??
+      restaurante.Endereco ??
+      "Endereço não informado";
+
+    const categoria =
+      restaurante.categoria ??
+      restaurante.Categoria ??
+      "Categoria não informada";
+
+    const telefone =
+      restaurante.telefone ??
+      restaurante.Telefone ??
+      "Telefone não informado";
+
+    const fotoUrl =
+      restaurante.fotoUrl ??
+      restaurante.FotoUrl ??
+      null;
+
+    const card = document.createElement("article");
+
+    card.className = "restaurant-card";
+
+    card.innerHTML = `
+
+      <div class="restaurant-card-image">
+
+        ${
+          fotoUrl
+            ? `
+              <img
+                src="${fotoUrl}"
+                alt="${nome}"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+            `
+            : ""
+        }
+
+        <div
+          class="restaurant-no-image"
+          style="display: ${fotoUrl ? "none" : "flex"};"
+        >
+          🍽️
+        </div>
+
+      </div>
+
+      <div class="restaurant-card-content">
+
+        <span class="restaurant-category">
+          ${categoria}
+        </span>
+
+        <h3 class="restaurant-name">
+          ${nome}
+        </h3>
+
+        <p class="restaurant-description">
+          ${descricao}
+        </p>
+
+        <div class="restaurant-info">
+
+          <div class="restaurant-info-item">
+            <span class="info-icon">📍</span>
+            <span>${endereco}</span>
+          </div>
+
+          <div class="restaurant-info-item">
+            <span class="info-icon">📞</span>
+            <span>${telefone}</span>
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-primary btn-full restaurant-card-button"
+        >
+          Ver estabelecimento
+        </button>
+
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+function aplicarMascaraTelefone(input) {
+
+  input.addEventListener("input", function () {
+
+    let valor = input.value.replace(/\D/g, "");
+
+    if (valor.length > 11) {
+      valor = valor.substring(0, 11);
+    }
+
+    if (valor.length <= 10) {
+
+      valor = valor.replace(
+        /^(\d{2})(\d{0,4})(\d{0,4}).*/,
+        function (_, ddd, parte1, parte2) {
+
+          let resultado = "";
+
+          if (ddd) resultado += `(${ddd}`;
+
+          if (ddd.length === 2) {
+            resultado += ") ";
+          }
+
+          if (parte1) {
+            resultado += parte1;
+          }
+
+          if (parte2) {
+            resultado += `-${parte2}`;
+          }
+
+          return resultado;
+        }
+      );
+
+    } else {
+
+      valor = valor.replace(
+        /^(\d{2})(\d{5})(\d{0,4}).*/,
+        function (_, ddd, parte1, parte2) {
+
+          let resultado = `(${ddd}) ${parte1}`;
+
+          if (parte2) {
+            resultado += `-${parte2}`;
+          }
+
+          return resultado;
+        }
+      );
+    }
+
+    input.value = valor;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const telefone = document.getElementById("perfil-telefone");
+  const telefoneRestaurante = document.getElementById("restaurante-setup-telefone");
+
+  if (telefone) {
+    aplicarMascaraTelefone(telefone);
+  }
+
+  if (telefoneRestaurante) {
+    aplicarMascaraTelefone(telefoneRestaurante);
+  }
+
+});
+// ═══════════════════════════════════════
+// RENDER CARDS — INFLUENCERS - MUDAR DEPOIS//
+// ═══════════════════════════════════════
+function renderInfluencers(list) {
+
+  const grid = document.getElementById("influencers-grid");
+
+  if (!grid) {
+    console.error("❌ Elemento influencers-grid não encontrado.");
+    return;
+  }
+
+  if (!list || list.length === 0) {
+
+    grid.innerHTML = `
+      <div class="empty-influencers">
+        <div class="empty-icon">👤</div>
+
+        <h3>Nenhum influenciador encontrado</h3>
+
+        <p>
+          Ainda não existem influenciadores cadastrados
+          no GastroLink.
+        </p>
+      </div>
+    `;
+
+    return;
+  }
+
+  grid.innerHTML = list.map(i => {
+
+    const foto = i.fotoUrl || null;
+
+    const seguidores = Number(i.seguidores || 0)
+      .toLocaleString("pt-BR");
+
+    const nome = i.nome || "Influenciador sem nome";
+    const instagram = i.instagram || "@instagram";
+    const descricao =
+      i.descricao ||
+      "Este influenciador ainda não possui uma descrição.";
+
+    return `
+      <article class="influencer-card">
+
+        <!-- FOTO -->
+        <div class="influencer-photo">
+
+          ${
+            foto
+              ? `
+                <img
+                  src="${foto}"
+                  alt="Foto de ${nome}"
+                  onerror="
+                    this.style.display='none';
+                    this.nextElementSibling.style.display='flex';
+                  "
+                />
+
+                <div
+                  class="influencer-photo-placeholder"
+                  style="display:none;"
+                >
+                  👤
+                </div>
+              `
+              : `
+                <div class="influencer-photo-placeholder">
+                  👤
+                </div>
+              `
+          }
+
+          <div class="influencer-status">
+            <span></span>
+            Disponível
+          </div>
+
+        </div>
+
+
+        <!-- CONTEÚDO -->
+        <div class="influencer-body">
+
+          <div class="influencer-heading">
+
+            <div>
+              <h3 class="influencer-name">
+                ${nome}
+              </h3>
+
+              <span class="influencer-handle">
+                ${instagram}
+              </span>
+            </div>
+
+            <div class="influencer-instagram-icon">
+              ◎
+            </div>
+
+          </div>
+
+
+          <!-- MÉTRICAS -->
+          <div class="influencer-metrics">
+
+            <div class="influencer-metric">
+
+              <strong>
+                ${seguidores}
+              </strong>
+
+              <span>
+                seguidores
+              </span>
+
+            </div>
+
+            <div class="influencer-metric-divider"></div>
+
+            <div class="influencer-metric">
+
+              <strong>
+                Creator
+              </strong>
+
+              <span>
+                perfil
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- DESCRIÇÃO -->
+          <p class="influencer-description">
+            ${descricao}
+          </p>
+
+
+          <!-- RODAPÉ -->
+          <div class="influencer-footer">
+
+            <button
+              type="button"
+              class="influencer-partner-btn"
+              onclick="abrirParceriaInfluencer(${i.id})"
+            >
+              <span>
+                Solicitar parceria
+              </span>
+
+              <span class="influencer-partner-arrow">
+                →
+              </span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+    `;
+
+  }).join("");
+
+}
+
+// ═══════════════════════════════════════
+// PARCERIA FLOW
+// ═══════════════════════════════════════
+ function abrirParceriaInfluencer(id) {
+
+    console.log("👤 Abrindo parceria para influencer:", id);
+
+    const inf = window.influencersCache?.find(i => i.id === id);
+
+    if (!inf) {
+        console.error("❌ Influenciador não encontrado:", id);
+        showToast("❌ Não foi possível encontrar este influenciador.");
+        return;
+    }
+
+    console.log("✅ Influenciador selecionado:", inf);
+
+    // Guarda o influencer selecionado para o envio da proposta
+    window.influencerSelecionado = inf;
+
+
+    // =====================================================
+    // NOME
+    // =====================================================
+
+    const nome = document.getElementById("modal-influencer-nome");
+
+    if (nome) {
+        nome.textContent =
+            inf.nome || "Influenciador";
+    }
+
+
+    // =====================================================
+    // INSTAGRAM
+    // =====================================================
+
+    const instagram =
+        document.getElementById("modal-influencer-instagram");
+
+    if (instagram) {
+
+        instagram.textContent =
+            inf.instagram || "@instagram";
+
+    }
+
+
+    // =====================================================
+    // SEGUIDORES
+    // =====================================================
+
+    const seguidores =
+        document.getElementById("modal-influencer-seguidores");
+
+    if (seguidores) {
+
+        seguidores.textContent =
+            Number(inf.seguidores || 0)
+                .toLocaleString("pt-BR");
+
+    }
+
+
+    // =====================================================
+    // DESCRIÇÃO
+    // =====================================================
+
+    const descricao =
+        document.getElementById("modal-influencer-descricao");
+
+    if (descricao) {
+
+        descricao.textContent =
+            inf.descricao ||
+            "Este influenciador ainda não possui uma descrição.";
+
+    }
+
+
+    // =====================================================
+    // FOTO
+    // =====================================================
+
+    const foto =
+        document.getElementById("modal-influencer-foto");
+
+    const semFoto =
+        document.getElementById("modal-influencer-sem-foto");
+
+
+    if (foto && semFoto) {
+
+        if (inf.fotoUrl) {
+
+            foto.src = inf.fotoUrl;
+
+            foto.alt =
+                inf.nome || "Foto do influenciador";
+
+            foto.style.display = "block";
+
+            semFoto.style.display = "none";
+
+
+            // Se a URL da foto estiver quebrada
+            foto.onerror = function () {
+
+                console.warn(
+                    "⚠️ Não foi possível carregar a foto:",
+                    inf.fotoUrl
+                );
+
+                foto.style.display = "none";
+
+                semFoto.style.display = "flex";
+
+            };
+
+        } else {
+
+            foto.src = "";
+
+            foto.style.display = "none";
+
+            semFoto.style.display = "flex";
+
+        }
+
+    }
+
+
+    // =====================================================
+    // LIMPAR CAMPO DA PROPOSTA
+    // =====================================================
+
+    const campoProposta =
+        document.getElementById("parceria-descricao");
+
+    const contador =
+        document.getElementById("parceria-contador");
+
+
+    if (campoProposta) {
+        campoProposta.value = "";
+    }
+
+
+    if (contador) {
+        contador.textContent = "0 / 500";
+    }
+
+
+    // =====================================================
+    // ABRIR MODAL
+    // =====================================================
+
+    showModal("modal-parceria-restaurante");
+
+}
+
+function abrirPerfilRestaurante(id) {
+
+  const restaurante = restaurantesCache.find(r => r.id === id);
+  
+  if (!restaurante) {
+    showToast("❌ Restaurante não encontrado");
+    return;
+  }
+
+  restauranteSelecionado = restaurante;
+
+  document.getElementById("perfil-nome-r").textContent =
+    restaurante.nome || "Restaurante";
+
+  document.getElementById("perfil-categoria-r").textContent =
+    restaurante.categoria || "Categoria não informada";
+
+  document.getElementById("perfil-descricao-r").textContent =
+    restaurante.descricao || "Nenhuma descrição cadastrada.";
+
+  document.getElementById("perfil-endereco-r").textContent =
+    restaurante.endereco || "Endereço não informado";
+
+  document.getElementById("perfil-telefone-r").textContent =
+    restaurante.telefone || "Telefone não informado";
+
+  const foto = document.getElementById("perfil-foto-r");
+  const semFoto = document.getElementById("perfil-sem-foto-r");
+
+  // Limpa o evento anterior
+  foto.onerror = null;
+
+  if (restaurante.fotoUrl) {
+
+      foto.onerror = function () {
+          foto.style.display = "none";
+          semFoto.style.display = "flex";
+      };
+
+      foto.src = restaurante.fotoUrl;
+      foto.style.display = "block";
+      semFoto.style.display = "none";
+
+  } else {
+
+      foto.removeAttribute("src");
+      foto.style.display = "none";
+      semFoto.style.display = "flex";
+
+  }
+
+  showPage("page-perfil-restaurante");
+}
+
+
+function abrirProposta() {
+
+  if (!restauranteSelecionado) {
+    showToast("❌ Restaurante não encontrado.");
+    return;
+  }
+
+  // Limpa a descrição anterior
+  document.getElementById("proposta-influencer-descricao").value = "";
+
+  // Atualiza o contador
+  document.getElementById("proposta-influencer-contador").textContent =
+    "0/500 caracteres";
+
+  // Abre o modal do influenciador
+  showModal("modal-proposta-influencer");
+}
+
+
+async function enviarPropostaInfluencer() {
+
+  const token = localStorage.getItem("token");
+
+  // Verifica autenticação
+  if (!token) {
+    showToast("❌ Sessão expirada. Faça login novamente.");
+    return;
+  }
+
+  // Verifica restaurante selecionado
+  if (!restauranteSelecionado) {
+    showToast("❌ Restaurante não encontrado.");
+    return;
+  }
+
+  const descricao = document
+    .getElementById("proposta-influencer-descricao")
+    .value.trim();
+
+  // Valida descrição
+  if (!descricao) {
+    showToast("❌ Informe a descrição da proposta.");
+    return;
+  }
+
+  const dados = {
+    descricao: descricao,
+    restauranteId: restauranteSelecionado.id
+  };
+
+  try {
+
+    const response = await fetch(
+      "https://localhost:7111/api/Proposta/influencer",
+      {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(dados)
+      }
+    );
+
+    if (!response.ok) {
+      const erro = await response.text();
+
+      console.error("Erro ao enviar proposta:", erro);
+
+      showToast(`❌ Não foi possível enviar a proposta (${response.status}).`);
+      return;
+    }
+
+    // Proposta criada com sucesso
+    const resultado = await response.json();
+
+    console.log("✅ Proposta enviada:", resultado);
+
+    closeModal("modal-proposta-influencer");
+
+    showToast("✅ Proposta enviada! O restaurante será notificado.");
+
+  } catch (error) {
+
+    console.error("Erro na requisição:", error);
+
+    showToast("❌ Erro ao conectar com a API.");
+
+  }
+}
+
+function enviarParceria() {
+  closeModal('modal-parceria-i');
+  showToast('✅ Solicitação enviada! O restaurante será notificado.');
+}
+
+function responderParceria(acao) {
+  closeModal('modal-parceria-r');
+  if (acao === 'aceitar') {
+    showToast('✅ Parceria aceita! O influenciador será notificado para entrar em contato.');
+  } else {
+    showToast('Proposta recusada. O influenciador foi notificado.');
+  }
+}
+
+function responderInfluencer(acao) {
+  closeModal('modal-responder-influencer');
+  if (acao === 'aceitar') {
+    showToast('✅ Proposta aceita! O restaurante entrará em contato pelo seu e-mail.');
+  } else {
+    showToast('Proposta recusada. O restaurante foi notificado.');
+  }
+}
+
+// ==========================================
+// FILTROS DOS INFLUENCIADORES
+// HOME DO RESTAURANTE
+// ==========================================
+
+function applyFilter() {
+
+    // Verifica se os influencers foram carregados
+    if (!Array.isArray(INFLUENCERS)) {
+
+        console.error(
+            "❌ Lista de influencers não encontrada."
+        );
+
+        return;
+    }
+
+
+    // ==========================================
+    // SEGUIDORES MÍNIMOS
+    // ==========================================
+
+    const filtroSeguidores =
+        document.getElementById("filtro-seguidores");
+
+    const minimoSeguidores =
+        Number(filtroSeguidores?.value || 0);
+
+
+    // ==========================================
+    // ORDENAÇÃO
+    // ==========================================
+
+    const filtroOrdenacao =
+        document.getElementById("filtro-ordenacao");
+
+    const ordenacao =
+        filtroOrdenacao?.value || "padrao";
+
+
+    // ==========================================
+    // COPIA A LISTA ORIGINAL
+    // ==========================================
+
+    let filtrados = [...INFLUENCERS];
+
+
+    // ==========================================
+    // FILTRA POR SEGUIDORES
+    // ==========================================
+
+    if (minimoSeguidores > 0) {
+
+        filtrados = filtrados.filter(influencer => {
+
+            const seguidores =
+                Number(influencer.seguidores || 0);
+
+            return seguidores >= minimoSeguidores;
+
+        });
+
+    }
+
+
+    // ==========================================
+    // ORDENAÇÃO
+    // ==========================================
+
+    switch (ordenacao) {
+
+        case "seguidores-desc":
+
+            filtrados.sort((a, b) =>
+                Number(b.seguidores || 0) -
+                Number(a.seguidores || 0)
+            );
+
+            break;
+
+
+        case "seguidores-asc":
+
+            filtrados.sort((a, b) =>
+                Number(a.seguidores || 0) -
+                Number(b.seguidores || 0)
+            );
+
+            break;
+
+
+        case "nome-asc":
+
+            filtrados.sort((a, b) =>
+                (a.nome || "").localeCompare(
+                    b.nome || "",
+                    "pt-BR"
+                )
+            );
+
+            break;
+
+
+        case "nome-desc":
+
+            filtrados.sort((a, b) =>
+                (b.nome || "").localeCompare(
+                    a.nome || "",
+                    "pt-BR"
+                )
+            );
+
+            break;
+
+    }
+
+
+    // ==========================================
+    // ATUALIZA OS CARDS
+    // ==========================================
+
+    renderInfluencers(filtrados);
+
+
+    console.log(
+        "🔎 Filtros aplicados:",
+        filtrados
+    );
+}
+
+
+// ==========================================
+// LIMPAR FILTROS
+// ==========================================
+
+function resetFilters() {
+
+    const filtroSeguidores =
+        document.getElementById("filtro-seguidores");
+
+    const filtroOrdenacao =
+        document.getElementById("filtro-ordenacao");
+
+
+    if (filtroSeguidores) {
+
+        filtroSeguidores.value = "0";
+
+    }
+
+
+    if (filtroOrdenacao) {
+
+        filtroOrdenacao.value = "padrao";
+
+    }
+
+
+    // Volta para todos os influencers
+    renderInfluencers(INFLUENCERS);
+
+
+    showToast(
+        "Filtros resetados"
+    );
+
+
+    console.log(
+        "↺ Filtros resetados."
+    );
+}
+
+// ═══════════════════════════════════════
+// PROFILE
+// ═══════════════════════════════════════
+
+function salvarPerfil() {
+
+  const token = localStorage.getItem("token");
+  const influencerId = window.meuInfluencerId;
+
+  // ==========================================
+  // VERIFICAÇÕES
+  // ==========================================
+
+  if (!token) {
+    showToast("❌ Sessão expirada. Faça login novamente.");
+    return;
+  }
+
+  if (!influencerId) {
+    showToast("❌ Não foi possível identificar seu perfil.");
+    console.error("❌ ID DO INFLUENCER NÃO ENCONTRADO.");
+    return;
+  }
+
+  // ==========================================
+  // PEGAR VALORES DOS CAMPOS
+  // ==========================================
+
+  const nome =
+    document.getElementById("perfil-edit-nome").value.trim();
+
+  const instagram =
+    document.getElementById("perfil-edit-instagram").value.trim();
+
+  const seguidoresTexto =
+    document.getElementById("perfil-edit-seguidores").value;
+
+  const telefone =
+    document.getElementById("perfil-edit-telefone").value.trim();
+
+  const fotoUrl =
+    document.getElementById("perfil-edit-foto").value.trim();
+
+  const descricao =
+    document.getElementById("perfil-edit-descricao").value.trim();
+
+  // ==========================================
+  // CONVERTER SEGUIDORES PARA NÚMERO
+  // ==========================================
+
+  const seguidores =
+    seguidoresTexto === ""
+      ? null
+      : Number(seguidoresTexto);
+
+  if (seguidores !== null && seguidores < 0) {
+    showToast("❌ O número de seguidores não pode ser negativo.");
+    return;
+  }
+
+  // ==========================================
+  // MONTAR OBJETO PARA A API
+  // ==========================================
+
+  const dados = {
+    nome: nome,
+    descricao: descricao,
+    instagram: instagram,
+    seguidores: seguidores,
+    telefone: telefone,
+    fotoUrl: fotoUrl
+  };
+
+  console.log("📤 ENVIANDO ATUALIZAÇÃO DO PERFIL:");
+  console.log("🆔 Influencer ID:", influencerId);
+  console.log("📦 Dados:", dados);
+
+  // ==========================================
+  // ENVIAR PUT PARA A API
+  // ==========================================
+
+  fetch(
+    `https://localhost:7111/api/Influencer/me?id=${influencerId}`,
+    {
+      method: "PUT",
+
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+
+      body: JSON.stringify(dados)
+    }
+  )
+    .then(async response => {
+
+      console.log(
+        "📡 STATUS ATUALIZAÇÃO PERFIL:",
+        response.status
+      );
+
+      // ==========================================
+      // ERRO DA API
+      // ==========================================
+
+      if (!response.ok) {
+
+        const erro = await response.text();
+
+        console.error(
+          "❌ ERRO AO ATUALIZAR PERFIL:",
+          erro
+        );
+
+        throw new Error(
+          "Não foi possível atualizar o perfil."
+        );
+      }
+
+      // ==========================================
+      // SUCESSO
+      // ==========================================
+
+      console.log(
+        "✅ PERFIL ATUALIZADO COM SUCESSO!"
+      );
+
+      showToast(
+        "✅ Perfil atualizado com sucesso!"
+      );
+
+      // Recarrega os dados do banco
+      // para atualizar a tela
+      if (typeof carregarMeuPerfil === "function") {
+        await carregarMeuPerfil();
+      }
+    })
+    .catch(error => {
+
+      console.error(
+        "🔥 ERRO AO SALVAR PERFIL:",
+        error
+      );
+
+      showToast(
+        "❌ Não foi possível salvar as alterações."
+      );
+    });
+}
+
+// ═══════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+// Close modal on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+});
+async function doRegister() {
+
+  console.log("🔥 CADASTRO CLICADO!");
+
+  const nome = document.getElementById("reg-nome").value.trim();
+  const email = document.getElementById("reg-email").value.trim();
+  const senha = document.getElementById("reg-senha").value;
+  const tipo = document.getElementById("register-tipo").value;
+
+  if (!nome || !email || !senha) {
+    showToast("❌ Preencha todos os campos");
+    return;
+  }
+
+  if (senha.length < 8) {
+    showToast("❌ A senha deve ter pelo menos 8 caracteres");
+    return;
+  }
+
+  const payload = {
+    nome: nome,
+    email: email,
+    senha: senha,
+    role: Number(tipo)
+  };
+
+  console.log("📤 REGISTER:", payload);
+
+  try {
+
+    const resposta = await fetch(
+      "https://localhost:7111/api/Auth/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      }
+    );
+
+    const texto = await resposta.text();
+
+    console.log("📡 STATUS:", resposta.status);
+    console.log("📥 RESPOSTA:", texto);
+
+    let dados = null;
+
+    if (texto) {
+      try {
+        dados = JSON.parse(texto);
+      } catch {
+        dados = { message: texto };
+      }
+    }
+
+    if (!resposta.ok) {
+
+      let mensagem =
+        dados?.message ||
+        dados?.title ||
+        dados?.error;
+
+      if (!mensagem && dados?.errors) {
+        mensagem = Object.values(dados.errors)
+          .flat()
+          .join(" ");
+      }
+
+      showToast(
+        "❌ " + (mensagem || `Erro HTTP ${resposta.status}`)
+      );
+
+      return;
+    }
+
+    console.log("✅ CONTA CRIADA:", dados);
+
+    showToast("✅ Conta criada com sucesso!");
+
+    document.getElementById("reg-nome").value = "";
+    document.getElementById("reg-email").value = "";
+    document.getElementById("reg-senha").value = "";
+
+    closeModal("modal-register");
+
+    setTimeout(() => {
+      showModal("modal-login");
+    }, 500);
+
+  } catch (erro) {
+
+    console.error("🔥 ERRO REGISTER:", erro);
+
+    showToast("❌ Não foi possível conectar com a API");
+  }
+}
+
+// Liga o botão à função
+document.addEventListener("DOMContentLoaded", function () {
+
+  const botao = document.getElementById("btn-register");
+
+  if (!botao) {
+    console.error("❌ btn-register não encontrado!");
+    return;
+  }
+
+  botao.addEventListener("click", doRegister);
+
+  console.log("✅ BOTÃO DE CADASTRO CONECTADO!");
+});
+document.addEventListener("DOMContentLoaded", () => {
+
+    const textarea =
+        document.getElementById("parceria-descricao");
+
+    const contador =
+        document.getElementById("parceria-contador");
+
+    if (!textarea || !contador) {
+        return;
+    }
+
+    textarea.addEventListener("input", () => {
+
+        contador.textContent =
+            `${textarea.value.length} / 500`;
+
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ==========================================
+  // CONTADOR DA DESCRIÇÃO
+  // ==========================================
+
+  const descricao =
+    document.getElementById("perfil-descricao");
+
+  const contador =
+    document.getElementById("perfil-descricao-contador");
+
+  if (descricao && contador) {
+
+    function atualizarContadorDescricao() {
+
+      const quantidade = descricao.value.length;
+
+      contador.textContent =
+        `${quantidade} / 500`;
+
+    }
+
+    descricao.addEventListener(
+      "input",
+      atualizarContadorDescricao
+    );
+
+    atualizarContadorDescricao();
+  }
+
+
+  // ==========================================
+  // PREVIEW DA FOTO
+  // ==========================================
+
+  const foto =
+    document.getElementById("perfil-foto");
+
+  const preview =
+    document.getElementById("perfil-setup-preview");
+
+  const placeholder =
+    document.getElementById("perfil-setup-placeholder");
+
+  if (foto && preview && placeholder) {
+
+    foto.addEventListener("input", function () {
+
+      const url = foto.value.trim();
+
+      if (!url) {
+
+        preview.src = "";
+        preview.style.display = "none";
+
+        placeholder.style.display = "flex";
+
+        return;
+      }
+
+      preview.src = url;
+
+    });
+
+    // ==========================================
+    // PREVIEW DA FOTO DO RESTAURANTE
+    // ==========================================
+
+    const fotoRestaurante = document.getElementById("restaurante-setup-foto");
+    const previewRestaurante = document.getElementById("restaurante-setup-preview");
+    const placeholderRestaurante = document.getElementById("restaurante-setup-placeholder");
+
+    if (fotoRestaurante && previewRestaurante && placeholderRestaurante) {
+
+        fotoRestaurante.addEventListener("input", function () {
+
+            const url = fotoRestaurante.value.trim();
+
+            if (!url) {
+                previewRestaurante.src = "";
+                previewRestaurante.style.display = "none";
+                placeholderRestaurante.style.display = "flex";
+                return;
+            }
+
+            previewRestaurante.onload = function () {
+                previewRestaurante.style.display = "block";
+                placeholderRestaurante.style.display = "none";
+            };
+
+            previewRestaurante.onerror = function () {
+                previewRestaurante.src = "";
+                previewRestaurante.style.display = "none";
+                placeholderRestaurante.style.display = "flex";
+            };
+
+            previewRestaurante.src = url;
+        });
+    }
+
+    preview.addEventListener("load", function () {
+
+      preview.style.display = "block";
+      placeholder.style.display = "none";
+
+    });
+
+    preview.addEventListener("error", function () {
+
+      preview.src = "";
+      preview.style.display = "none";
+
+      placeholder.style.display = "flex";
+
+    });
+  }
+
+});
+  // ==========================================
+  // ABRIR PÁGINA INICIAL
+  // 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const landing = document.getElementById("page-landing");
+
+  if (landing) {
+    showPage("page-landing");
+  } else {
+    console.error("❌ page-landing não encontrada.");
+  }
+});
+
+
+</script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

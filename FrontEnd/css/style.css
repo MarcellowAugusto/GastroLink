@@ -1,0 +1,6302 @@
+
+/* =====================================================
+   HOME RESTAURANTE
+===================================================== */
+
+#page-restaurante .restaurant-layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 2rem;
+  margin: 0;
+  padding: 2rem 2rem 3rem 2rem;
+  box-sizing: border-box;
+  align-items: start;
+}
+
+/* =====================================================
+   FILTRO
+===================================================== */
+
+#page-restaurante .restaurant-layout > .sidebar {
+  width: 250px;
+  min-width: 250px;
+  position: sticky;
+  top: 90px;
+}
+
+/* =====================================================
+   CONTEÚDO
+===================================================== */
+
+#page-restaurante .restaurant-home {
+  width: 100%;
+  min-width: 0;
+}
+
+#page-restaurante .restaurant-home-header {
+  margin-bottom: 1.5rem;
+}
+
+#page-restaurante .restaurant-home-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+#page-restaurante .restaurant-home-header p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* =====================================================
+   GRID DOS RESTAURANTES
+===================================================== */
+
+#page-restaurante #restaurantes-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* =====================================================
+   CARD DO RESTAURANTE
+===================================================== */
+
+#page-restaurante .restaurant-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#page-restaurante .restaurant-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(232, 129, 58, 0.15);
+}
+
+/* =====================================================
+   IMAGEM
+===================================================== */
+
+#page-restaurante .restaurant-card-image {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: var(--surface2);
+}
+
+#page-restaurante .restaurant-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#page-restaurante .restaurant-no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: linear-gradient(135deg, #f8f8f8, #eeeeee);
+}
+
+/* =====================================================
+   CONTEÚDO DO CARD
+===================================================== */
+
+#page-restaurante .restaurant-card-content {
+  padding: 1.2rem;
+}
+
+/* Categoria */
+
+#page-restaurante .restaurant-category {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: #fff1e8;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+/* Nome */
+
+#page-restaurante .restaurant-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.45rem;
+  color: var(--text);
+}
+
+/* Descrição */
+
+#page-restaurante .restaurant-description {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* =====================================================
+   INFORMAÇÕES
+===================================================== */
+
+#page-restaurante .restaurant-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+#page-restaurante .restaurant-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+#page-restaurante .info-icon {
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   BOTÃO
+===================================================== */
+
+#page-restaurante .restaurant-card-button {
+  width: 100%;
+}
+
+/* =====================================================
+   NENHUM RESTAURANTE
+===================================================== */
+
+#page-restaurante .empty-restaurants {
+  grid-column: 1 / -1;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  color: var(--muted);
+}
+
+#page-restaurante .empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#page-restaurante .empty-restaurants h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+#page-restaurante .empty-restaurants p {
+  color: var(--muted);
+}
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 950px) {
+
+  #page-restaurante #restaurantes-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  #page-restaurante .restaurant-layout {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  #page-restaurante .restaurant-layout > .sidebar {
+    width: 100%;
+    min-width: 0;
+    position: relative;
+    top: auto;
+  }
+
+  #page-restaurante .restaurant-home {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  #page-restaurante .restaurant-home-header h1 {
+    font-size: 1.6rem;
+  }
+
+}
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .featured-restaurants {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+/* =====================================================
+   HOME RESTAURANTE
+===================================================== */
+
+#page-restaurante .restaurant-layout {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns: 250px minmax(0, 1fr) !important;
+
+  gap: 2rem !important;
+
+  margin: 0 !important;
+
+  padding: 2rem 2rem 3rem 2rem !important;
+
+  box-sizing: border-box !important;
+
+  align-items: start !important;
+}
+
+
+/* =====================================================
+   FILTRO
+===================================================== */
+
+#page-restaurante .restaurant-layout > .sidebar {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+
+  margin: 0 !important;
+
+  position: sticky !important;
+  top: 90px !important;
+}
+
+
+/* =====================================================
+   ÁREA DOS CARDS
+===================================================== */
+
+#page-restaurante .restaurant-home {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+
+  width: 100% !important;
+  min-width: 0 !important;
+
+  margin: 0 !important;
+}
+
+
+/* =====================================================
+   GRID DOS CARDS
+===================================================== */
+
+#page-restaurante .influencers-grid {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(2, minmax(280px, 1fr)) !important;
+
+  gap: 1.5rem !important;
+
+  margin: 0 !important;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+#page-restaurante .restaurant-home-header {
+  margin: 0 0 1.5rem 0 !important;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 800px) {
+
+  #page-restaurante .restaurant-layout {
+    grid-template-columns: 1fr !important;
+    padding: 1rem !important;
+  }
+
+  #page-restaurante .restaurant-layout > .sidebar {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    position: relative !important;
+    top: auto !important;
+  }
+
+  #page-restaurante .restaurant-home {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  #page-restaurante .influencers-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+}
+/* =====================================================
+   HOME RESTAURANTE
+   BUSCA DE INFLUENCIADORES
+===================================================== */
+
+.restaurant-home {
+  padding-top: 0.5rem;
+}
+
+.restaurant-home-header {
+  margin-bottom: 1.5rem;
+}
+
+.restaurant-home-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+.restaurant-home-header p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+
+/* =====================================================
+   GRID DOS INFLUENCIADORES
+===================================================== */
+
+.influencers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+
+/* =====================================================
+   CARD DO INFLUENCIADOR
+===================================================== */
+
+.influencer-card {
+  background: #151515;
+  border: 1px solid #292929;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  min-width: 0;
+}
+
+.influencer-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.30);
+}
+
+
+/* FOTO */
+
+.influencer-photo {
+  height: 210px;
+  background:
+    radial-gradient(
+      circle at center,
+      #292929 0%,
+      #1b1b1b 55%,
+      #151515 100%
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.influencer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.influencer-photo-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #252525;
+  border: 1px solid #383838;
+
+  font-size: 3rem;
+}
+
+
+/* CONTEÚDO */
+
+.influencer-body {
+  padding: 1.2rem;
+}
+
+.influencer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.2rem;
+}
+
+.influencer-handle {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.influencer-followers {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+
+/* TAGS */
+
+.influencer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.influencer-tags .tag {
+  margin: 0;
+}
+
+
+/* RODAPÉ DO CARD */
+
+.influencer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  padding-top: 1rem;
+  border-top: 1px solid #292929;
+}
+
+.influencer-price {
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.influencer-footer .btn {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   QUANDO NÃO HOUVER INFLUENCIADORES
+===================================================== */
+
+.empty-influencers {
+  grid-column: 1 / -1;
+
+  padding: 3rem 2rem;
+
+  text-align: center;
+
+  background: #151515;
+  border: 1px dashed #303030;
+  border-radius: 16px;
+
+  color: var(--muted);
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .influencers-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .layout-sidebar {
+    grid-template-columns: 1fr !important;
+  }
+
+  .layout-sidebar > .sidebar {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    position: relative !important;
+    top: auto !important;
+  }
+
+  .influencers-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  nav {
+    padding: 0.8rem 1rem;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .nav-right {
+    gap: 0.4rem;
+  }
+
+  .nav-right .btn-secondary {
+    font-size: 0;
+    padding: 0.6rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .restaurant-home-header h1 {
+    font-size: 1.6rem;
+  }@media
+/* =====================================================
+   NAV DA HOME
+===================================================== */
+
+nav {
+  min-height: 68px;
+  padding: 0.85rem 2rem;
+}
+
+.nav-search {
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.nav-icon-btn {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #202020;
+  border: 1px solid #2d2d2d;
+  border-radius: 9px;
+
+  color: #ddd;
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.nav-icon-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.nav-logout {
+  padding: 0.55rem 1rem;
+  font-size: 0.8rem;
+}
+
+}
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --surface2: #1f1f1f;
+      --border: #2a2a2a;
+      --accent: #e8813a;
+      --accent2: #3a7bd5;
+      --green: #3ecf8e;
+      --red: #e84040;
+      --text: #f0ece4;
+      --muted: #888;
+      --radius: 12px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── PAGES ── */
+    .page { display: none; min-height: 100vh; }
+    .page.active { display: flex; flex-direction: column; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem; background: var(--surface);
+      border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent); letter-spacing: -0.5px; }
+    .logo span { color: var(--text); }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .search-box {
+      background: var(--surface2); border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.5rem 1rem; color: var(--text); font-family: 'DM Sans'; font-size: 0.9rem; width: 220px;
+    }
+    .search-box:focus { outline: none; border-color: var(--accent); }
+    .avatar-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      padding: 0.65rem 1.4rem; border-radius: 8px; border: none;
+      font-family: 'DM Sans'; font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #d06d28; transform: translateY(-1px); }
+    .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-success { background: var(--green); color: #0d0d0d; }
+    .btn-success:hover { background: #32b87b; }
+    .btn-danger { background: var(--red); color: #fff; }
+    .btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+    .btn-outline:hover { background: var(--accent); color: #fff; }
+    .btn-lg { padding: 0.85rem 2rem; font-size: 1rem; }
+    .btn-full { width: 100%; text-align: center; }
+
+    /* ── FORMS ── */
+    .form-group { margin-bottom: 1.2rem; }
+    label { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 0.4rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
+    input, select, textarea {
+      width: 100%; background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.7rem 1rem; color: var(--text);
+      font-family: 'DM Sans'; font-size: 0.95rem;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+    select option { background: var(--surface2); }
+    textarea { resize: vertical; min-height: 90px; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; transition: all 0.25s;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(232,129,58,0.15); }
+    .card-img { width: 100%; height: 180px; object-fit: cover; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .card-body { padding: 1rem 1.2rem; }
+    .card-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .card-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.8rem; }
+    .tag { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-right: 0.3rem; margin-bottom: 0.3rem; }
+    .tag-orange { background: rgba(232,129,58,0.15); color: var(--accent); }
+    .tag-blue { background: rgba(58,123,213,0.15); color: var(--accent2); }
+    .tag-green { background: rgba(62,207,142,0.15); color: var(--green); }
+
+    /* ── GRIDS ── */
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    /* ── LAYOUT CONTAINERS ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    /* ================================
+   LAYOUT + FILTROS
+================================ */
+
+.layout-sidebar {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.sidebar {
+    background: #171717;
+    border: 1px solid #292929;
+    border-radius: 16px;
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.sidebar label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.filter-block {
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #292929;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.55rem 0;
+    color: #d7d3cc;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-item:hover {
+    color: var(--accent);
+}
+
+.filter-item input {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.sidebar select {
+    width: 100%;
+    height: 42px;
+    padding: 0 0.8rem;
+    border-radius: 9px;
+    border: 1px solid #303030;
+    background: #202020;
+    color: var(--text);
+    outline: none;
+    cursor: pointer;
+}
+
+.sidebar select:focus {
+    border-color: var(--accent);
+}
+
+.sidebar .btn-full {
+    width: 100%;
+    margin-top: 0.2rem;
+
+}
+
+/* =========================================
+   SIDEBAR DE FILTROS - GASTROLINK
+========================================= */
+
+.layout-sidebar {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+
+/* PAINEL */
+
+.sidebar {
+  width: 250px;
+  background: #151515;
+  border: 1px solid #292929;
+  border-radius: 16px;
+  padding: 1.25rem;
+  position: sticky;
+  top: 90px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.30);
+}
+
+
+/* CABEÇALHO */
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #292929;
+}
+
+.sidebar-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(232,129,58,0.12);
+  color: var(--accent);
+
+  font-size: 1rem;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.sidebar-header span {
+  display: block;
+  margin-top: 0.15rem;
+
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+
+/* GRUPOS */
+
+.filter-block {
+  padding-bottom: 1.15rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid #292929;
+}
+
+.filter-block > label:not(.filter-item) {
+  display: block;
+
+  margin-bottom: 0.65rem;
+
+  color: #a9a39a;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+
+/* CHECKBOXES */
+
+.filter-item {
+  display: flex !important;
+  align-items: center;
+
+  gap: 0.65rem;
+
+  padding: 0.45rem 0;
+
+  margin: 0 !important;
+
+  color: #d7d3cc !important;
+
+  font-size: 0.86rem !important;
+  font-weight: 400 !important;
+
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.filter-item:hover {
+  color: var(--accent) !important;
+}
+
+
+/* CHECKBOX */
+
+.filter-item input {
+  appearance: none;
+
+  width: 16px !important;
+  height: 16px !important;
+
+  flex-shrink: 0;
+
+  margin: 0 !important;
+
+  border: 1px solid #444;
+  border-radius: 4px;
+
+  background: #202020;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+.filter-item input:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.filter-item input:checked::after {
+  content: "✓";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -55%);
+
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* SELECTS */
+
+.sidebar select {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 0.75rem;
+
+  border-radius: 8px;
+
+  border: 1px solid #303030;
+
+  background: #202020;
+
+  color: var(--text);
+
+  font-family: 'DM Sans', sans-serif;
+
+  font-size: 0.82rem;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+.sidebar select:hover {
+  border-color: #444;
+}
+
+.sidebar select:focus {
+  border-color: var(--accent);
+}
+
+
+/* BOTÃO LIMPAR */
+
+.filter-clear {
+  height: 40px;
+
+  padding: 0 1rem;
+
+  font-size: 0.8rem;
+
+  border-radius: 8px;
+
+  color: #aaa;
+}
+
+.filter-clear:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+    /* ── BADGE / NOTIFICATION ── */
+    .badge { position: absolute; top: -4px; right: -4px; width: 18px; height: 18px; border-radius: 50%; background: var(--red); font-size: 0.65rem; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; }
+    .notif-dot { position: relative; display: inline-block; }
+
+    /* ── ALERT ── */
+    .alert { padding: 0.9rem 1.2rem; border-radius: 8px; margin-bottom: 1rem; font-size: 0.9rem; border-left: 4px solid; }
+    .alert-success { background: rgba(62,207,142,0.1); border-color: var(--green); color: var(--green); }
+    .alert-warn { background: rgba(232,129,58,0.1); border-color: var(--accent); color: var(--accent); }
+    .alert-info { background: rgba(58,123,213,0.1); border-color: var(--accent2); color: var(--accent2); }
+
+    /* ── MODAL ── */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 200; display: none; align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; position: relative; }
+    .modal h2 { font-family: 'Playfair Display', serif; margin-bottom: 1.5rem; }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--muted); font-size: 1.4rem; cursor: pointer; }
+    .modal-close:hover { color: var(--text); }
+
+    /* ── HERO (LANDING) ── */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 2rem;
+      background: radial-gradient(ellipse at 60% 30%, rgba(232,129,58,0.12) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(58,123,213,0.08) 0%, transparent 50%);
+    }
+    .hero-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 1.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.1; margin-bottom: 1.5rem; }
+    .hero h1 em { color: var(--accent); font-style: normal; }
+    .hero p { max-width: 520px; color: var(--muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 3rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .type-cards { display: flex; gap: 1.5rem; margin-top: 4rem; flex-wrap: wrap; justify-content: center; }
+    .type-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 2rem; width: 220px; cursor: pointer; text-align: center; transition: all 0.25s;
+    }
+    .type-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .type-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .type-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .type-card p { font-size: 0.82rem; color: var(--muted); }
+
+    /* ── STAT STRIP ── */
+    .stats-strip { display: flex; gap: 2rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent); }
+    .stat-lbl { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ── PROFILE HEADER ── */
+    .profile-header { display: flex; align-items: center; gap: 1.5rem; padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 2rem; }
+    .profile-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-family: 'Playfair Display', serif; color: #fff; flex-shrink: 0; }
+    .profile-info h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+    .profile-info p { color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem; }
+
+    /* ── AGREEMENT TIMELINE ── */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+    .tl-item { position: relative; margin-bottom: 1.5rem; }
+    .tl-dot { position: absolute; left: -2rem; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--surface2); border: 2px solid var(--border); }
+    .tl-dot.done { background: var(--green); border-color: var(--green); }
+    .tl-dot.active { background: var(--accent); border-color: var(--accent); }
+    .tl-label { font-weight: 600; font-size: 0.9rem; }
+    .tl-sub { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+
+    /* ── NOTIFICATION LIST ── */
+    .notif-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 0.75rem; background: var(--surface); transition: border-color 0.2s; }
+    .notif-item.unread { border-color: var(--accent); }
+    .notif-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .notif-body p { font-size: 0.88rem; }
+    .notif-time { font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; }
+
+    /* ── STATUS BADGE ── */
+    .status { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.7rem; border-radius: 20px; }
+    .status-pending { background: rgba(232,129,58,0.15); color: var(--accent); }
+    .status-accepted { background: rgba(62,207,142,0.15); color: var(--green); }
+    .status-rejected { background: rgba(232,64,64,0.15); color: var(--red); }
+
+    /* ── SECTION TITLES ── */
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 0.4rem; }
+    .section-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+    /* ── TOAST ── */
+    .toast { position: fixed; bottom: 2rem; right: 2rem; z-index: 300; background: var(--surface); border: 1px solid var(--green); border-radius: 8px; padding: 1rem 1.5rem; min-width: 250px; transform: translateY(100px); opacity: 0; transition: all 0.3s; }
+    .toast.show { transform: translateY(0); opacity: 1; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    /* =====================================================
+   GASTROLINK — NOVO VISUAL DA ÁREA DE FILTROS
+   SOBRESCREVE AS REGRAS ANTIGAS
+===================================================== */
+
+.layout-sidebar {
+  display: grid !important;
+  grid-template-columns: 250px minmax(0, 1fr) !important;
+  gap: 2rem !important;
+  align-items: start !important;
+}
+
+/* PAINEL PRINCIPAL */
+
+.layout-sidebar > .sidebar {
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+
+  background: #151515 !important;
+  border: 1px solid #2c2c2c !important;
+  border-radius: 16px !important;
+
+  padding: 1.25rem !important;
+
+  position: sticky !important;
+  top: 90px !important;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.35) !important;
+}
+
+/* CABEÇALHO DO FILTRO */
+
+.sidebar .sidebar-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: .75rem !important;
+
+  padding-bottom: 1rem !important;
+  margin-bottom: 1rem !important;
+
+  border-bottom: 1px solid #2b2b2b !important;
+}
+
+.sidebar .sidebar-icon {
+  width: 36px !important;
+  height: 36px !important;
+
+  flex-shrink: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 10px !important;
+
+  background: rgba(232,129,58,.12) !important;
+  color: var(--accent) !important;
+
+  font-size: 1rem !important;
+}
+
+.sidebar .sidebar-header h3 {
+  margin: 0 !important;
+
+  color: #f0ece4 !important;
+
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.sidebar .sidebar-header span {
+  display: block !important;
+
+  margin-top: 3px !important;
+
+  color: #777 !important;
+
+  font-size: .7rem !important;
+}
+
+/* CADA GRUPO */
+
+.sidebar .filter-block {
+  padding-bottom: 1rem !important;
+  margin-bottom: 1rem !important;
+
+  border-bottom: 1px solid #292929 !important;
+}
+
+/* TÍTULO DOS FILTROS */
+
+.sidebar .filter-block > label:not(.filter-item) {
+  display: block !important;
+
+  margin-bottom: .55rem !important;
+
+  color: #999 !important;
+
+  font-size: .7rem !important;
+  font-weight: 600 !important;
+
+  text-transform: uppercase !important;
+  letter-spacing: .07em !important;
+}
+
+/* OPÇÕES */
+
+.sidebar label.filter-item {
+  display: flex !important;
+  align-items: center !important;
+
+  width: 100% !important;
+
+  gap: .65rem !important;
+
+  padding: .38rem 0 !important;
+  margin: 0 !important;
+
+  color: #d5d1ca !important;
+
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: .84rem !important;
+  font-weight: 400 !important;
+
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+
+  cursor: pointer !important;
+}
+
+.sidebar label.filter-item:hover {
+  color: var(--accent) !important;
+}
+
+/* CHECKBOX */
+
+.sidebar .filter-item input[type="checkbox"] {
+  appearance: none !important;
+
+  width: 16px !important;
+  height: 16px !important;
+
+  min-width: 16px !important;
+  max-width: 16px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: 1px solid #444 !important;
+  border-radius: 4px !important;
+
+  background: #202020 !important;
+
+  cursor: pointer !important;
+
+  position: relative !important;
+}
+
+.sidebar .filter-item input[type="checkbox"]:checked {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+.sidebar .filter-item input[type="checkbox"]:checked::after {
+  content: "✓";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -55%);
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* SELECTS */
+
+.sidebar select {
+  width: 100% !important;
+  height: 38px !important;
+
+  padding: 0 .7rem !important;
+
+  background: #202020 !important;
+
+  border: 1px solid #303030 !important;
+  border-radius: 8px !important;
+
+  color: #eee !important;
+
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: .8rem !important;
+
+  outline: none !important;
+}
+
+.sidebar select:hover {
+  border-color: #444 !important;
+}
+
+.sidebar select:focus {
+  border-color: var(--accent) !important;
+}
+
+/* BOTÃO LIMPAR */
+
+.sidebar .filter-clear {
+  width: 100% !important;
+
+  height: 38px !important;
+
+  margin-top: 0 !important;
+
+  padding: 0 .8rem !important;
+
+  background: #1d1d1d !important;
+
+  border: 1px solid #303030 !important;
+  border-radius: 8px !important;
+
+  color: #999 !important;
+
+  font-size: .78rem !important;
+}
+
+.sidebar .filter-clear:hover {
+  background: rgba(232,129,58,.08) !important;
+
+  border-color: var(--accent) !important;
+
+  color: var(--accent) !important;
+}
+
+
+/* =====================================================
+   CONTEÚDO AO LADO DO FILTRO
+===================================================== */
+
+.layout-sidebar > main {
+  min-width: 0 !important;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .layout-sidebar {
+    grid-template-columns: 1fr !important;
+  }
+
+  .layout-sidebar > .sidebar {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    position: relative !important;
+    top: auto !important;
+  }
+
+}
+
+/* =====================================================
+   POSICIONAMENTO DA HOME DO RESTAURANTE
+   FILTRO NO CANTO ESQUERDO
+===================================================== */
+
+/* O container da home ocupa praticamente a tela toda */
+#page-restaurante > .container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+
+  padding: 2rem 2rem 3rem 2rem !important;
+}
+
+
+/* Layout principal */
+#page-restaurante .layout-sidebar {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns: 250px minmax(0, 1fr) !important;
+
+  gap: 2rem !important;
+
+  margin: 0 !important;
+
+  align-items: start !important;
+}
+
+
+/* Filtro */
+#page-restaurante .layout-sidebar > .sidebar {
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+
+  margin: 0 !important;
+
+  position: sticky !important;
+  top: 90px !important;
+}
+
+
+/* Conteúdo dos influenciadores */
+#page-restaurante .layout-sidebar > .restaurant-home {
+  width: 100% !important;
+  min-width: 0 !important;
+
+  margin: 0 !important;
+}
+
+
+/* Título */
+#page-restaurante .restaurant-home-header {
+  margin: 0 0 1.5rem 0 !important;
+}
+
+
+/* Grid */
+#page-restaurante .influencers-grid {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns: repeat(2, minmax(280px, 1fr)) !important;
+
+  gap: 1.5rem !important;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 800px) {
+
+  #page-restaurante > .container {
+    padding: 1rem !important;
+  }
+
+  #page-restaurante .layout-sidebar {
+    grid-template-columns: 1fr !important;
+  }
+
+  #page-restaurante .layout-sidebar > .sidebar {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    position: relative !important;
+    top: auto !important;
+  }
+
+  #page-restaurante .influencers-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+}
+```css
+/* =====================================================
+   HOME DO INFLUENCIADOR
+===================================================== */
+
+#page-influencer .influencer-home {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 2rem 2rem 3rem 2rem;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+#page-influencer .restaurant-home-header {
+  margin-bottom: 1.5rem;
+}
+
+#page-influencer .restaurant-home-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+#page-influencer .restaurant-home-header p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+
+/* =====================================================
+   GRID DOS RESTAURANTES
+===================================================== */
+
+#page-influencer .influencer-restaurants-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(280px, 1fr));
+
+  gap: 1.5rem;
+}
+
+
+/* =====================================================
+   CARD DO RESTAURANTE
+===================================================== */
+
+#page-influencer .influencer-restaurant-card {
+  background: #151515;
+
+  border: 1px solid #292929;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+#page-influencer .influencer-restaurant-card:hover {
+  border-color: var(--accent);
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, .30);
+}
+
+
+/* =====================================================
+   FOTO DO RESTAURANTE
+===================================================== */
+
+#page-influencer .influencer-restaurant-photo {
+  width: 100%;
+  height: 190px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #292929 0%,
+      #1b1b1b 55%,
+      #151515 100%
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-influencer .influencer-restaurant-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =====================================================
+   PLACEHOLDER DA FOTO
+===================================================== */
+
+#page-influencer .influencer-restaurant-photo-placeholder {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #252525;
+
+  border: 1px solid #383838;
+
+  font-size: 3rem;
+}
+
+
+/* =====================================================
+   CONTEÚDO DO CARD
+===================================================== */
+
+#page-influencer .influencer-restaurant-body {
+  padding: 1.2rem;
+}
+
+
+/* =====================================================
+   CATEGORIA
+===================================================== */
+
+#page-influencer .influencer-restaurant-category {
+  display: inline-block;
+
+  padding: 0.35rem 0.7rem;
+
+  border-radius: 999px;
+
+  background: #fff1e8;
+
+  color: var(--accent);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  margin-bottom: 0.65rem;
+}
+
+
+/* =====================================================
+   NOME
+===================================================== */
+
+#page-influencer .influencer-restaurant-name {
+  font-family: 'Playfair Display', serif;
+
+  font-size: 1.3rem;
+
+  margin-bottom: 0.45rem;
+
+  color: var(--text);
+}
+
+
+/* =====================================================
+   DESCRIÇÃO
+===================================================== */
+
+#page-influencer .influencer-restaurant-description {
+  color: var(--muted);
+
+  font-size: 0.85rem;
+
+  line-height: 1.5;
+
+  margin-bottom: 1rem;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 3;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   INFORMAÇÕES
+===================================================== */
+
+#page-influencer .influencer-restaurant-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.6rem;
+
+  margin-bottom: 1.1rem;
+
+  padding-top: 0.9rem;
+
+  border-top: 1px solid #292929;
+}
+
+#page-influencer .influencer-restaurant-info-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 0.5rem;
+
+  color: var(--muted);
+
+  font-size: 0.82rem;
+
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   BOTÃO
+===================================================== */
+
+#page-influencer .influencer-restaurant-button {
+  width: 100%;
+}
+
+
+/* =====================================================
+   ESTADO VAZIO / CARREGANDO
+===================================================== */
+
+#page-influencer .influencer-loading {
+  grid-column: 1 / -1;
+
+  padding: 3rem 2rem;
+
+  text-align: center;
+
+  background: #151515;
+
+  border: 1px dashed #303030;
+
+  border-radius: 16px;
+
+  color: var(--muted);
+}
+
+#page-influencer .influencer-loading .empty-icon {
+  font-size: 3rem;
+
+  margin-bottom: 1rem;
+}
+
+#page-influencer .influencer-loading h3 {
+  margin-bottom: 0.5rem;
+
+  color: var(--text);
+}
+
+#page-influencer .influencer-loading p {
+  color: var(--muted);
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 950px) {
+
+  #page-influencer .influencer-restaurants-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  #page-influencer .influencer-home {
+    padding: 1rem;
+  }
+
+  #page-influencer .restaurant-home-header h1 {
+    font-size: 1.6rem;
+  }
+
+}
+/* =====================================================
+   HOME DO INFLUENCIADOR - LAYOUT COM SIDEBAR
+===================================================== */
+
+#page-influencer .influencer-home-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: calc(100vh - 70px);
+}
+
+/* =====================================================
+   SIDEBAR - FILTROS DO INFLUENCER
+===================================================== */
+
+#page-influencer .influencer-sidebar {
+    background: rgba(18, 18, 18, 0.88);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+#page-influencer .filter-header {
+    margin-bottom: 1.5rem;
+}
+
+#page-influencer .filter-header h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+#page-influencer .filter-group {
+    margin-bottom: 1.2rem;
+}
+
+#page-influencer .filter-group label {
+    display: block;
+    margin-bottom: 0.55rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+#page-influencer .filter-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 0.85rem;
+
+    background: #171717;
+    border: 1px solid #303030;
+    border-radius: 9px;
+
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+#page-influencer .filter-group input::placeholder {
+    color: #777;
+}
+
+#page-influencer .filter-group input:focus {
+    border-color: #e8813a;
+    background: #1c1917;
+}
+
+#page-influencer .influencer-sidebar .btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0.7rem;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+===================================================== */
+
+#page-influencer .influencer-home-content {
+  padding: 2rem;
+  min-width: 0;
+}
+
+#page-influencer .restaurant-home-header {
+  margin-bottom: 2rem;
+}
+
+#page-influencer .restaurant-home-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+#page-influencer .restaurant-home-header p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* =====================================================
+   TÍTULO DA SEÇÃO
+===================================================== */
+
+#page-influencer .section-title {
+  margin-bottom: 1.3rem;
+}
+
+#page-influencer .section-title h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+#page-influencer .section-title p {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* =====================================================
+   GRID DE RESTAURANTES
+===================================================== */
+
+#page-influencer .influencer-restaurants-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 950px) {
+
+  #page-influencer .influencer-home-layout {
+    grid-template-columns: 210px 1fr;
+  }
+
+  #page-influencer .influencer-restaurants-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  #page-influencer .influencer-home-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #page-influencer .influencer-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  #page-influencer .influencer-home-content {
+    padding: 1rem;
+  }
+
+}
+
+/* =====================================================
+   PERFIL PÚBLICO DO RESTAURANTE
+   Visualização pelo influenciador
+===================================================== */
+
+#page-perfil-restaurante .restaurant-profile-page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  background: var(--bg);
+}
+
+/* =====================================================
+   CAPA DO RESTAURANTE
+===================================================== */
+
+#page-perfil-restaurante .restaurant-profile-cover {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, #292929, #151515);
+  border-bottom: 1px solid var(--border);
+}
+
+#page-perfil-restaurante .restaurant-profile-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.35)
+  );
+  pointer-events: none;
+}
+
+#page-perfil-restaurante .restaurant-profile-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+#page-perfil-restaurante .restaurant-profile-no-photo {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--muted);
+  background:
+    radial-gradient(circle, #292929, #151515);
+}
+
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+===================================================== */
+
+#page-perfil-restaurante .restaurant-profile-content {
+  width: calc(100% - 3rem);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+#page-perfil-restaurante .restaurant-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#page-perfil-restaurante .restaurant-profile-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  color: var(--text);
+  margin: 0.45rem 0 0;
+  line-height: 1.15;
+}
+
+#page-perfil-restaurante .restaurant-profile-header .influencer-restaurant-category {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Selo de restaurante */
+
+#page-perfil-restaurante .restaurant-profile-header .status {
+  white-space: nowrap;
+  padding: 0.5rem 0.9rem;
+  border-radius: 30px;
+  font-size: 0.78rem;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+#page-perfil-restaurante .restaurant-profile-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.7rem;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.2s ease;
+}
+
+#page-perfil-restaurante .restaurant-profile-card:hover {
+  border-color: rgba(232, 129, 58, 0.35);
+}
+
+#page-perfil-restaurante .restaurant-profile-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+
+#page-perfil-restaurante .restaurant-profile-card p {
+  color: var(--muted);
+  line-height: 1.75;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* =====================================================
+   INFORMAÇÕES
+===================================================== */
+
+#page-perfil-restaurante .restaurant-profile-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+#page-perfil-restaurante .restaurant-profile-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  min-width: 0;
+}
+
+#page-perfil-restaurante .restaurant-profile-info-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+#page-perfil-restaurante .restaurant-profile-info-item strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+#page-perfil-restaurante .restaurant-profile-info-item p {
+  font-size: 0.87rem;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   AÇÃO DE PARCERIA
+===================================================== */
+
+#page-perfil-restaurante .restaurant-profile-action {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+}
+
+#page-perfil-restaurante .restaurant-profile-action .btn {
+  min-width: 250px;
+  padding: 0.9rem 1.5rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#page-perfil-restaurante .restaurant-profile-action .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(232, 129, 58, 0.2);
+}
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 700px) {
+
+  #page-perfil-restaurante .restaurant-profile-cover {
+    height: 220px;
+  }
+
+  #page-perfil-restaurante .restaurant-profile-content {
+    width: calc(100% - 2rem);
+    padding: 1.5rem 0 3rem;
+  }
+
+  #page-perfil-restaurante .restaurant-profile-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #page-perfil-restaurante .restaurant-profile-header h1 {
+    font-size: 2rem;
+  }
+
+  #page-perfil-restaurante .restaurant-profile-card {
+    padding: 1.2rem;
+  }
+
+  #page-perfil-restaurante .restaurant-profile-info {
+    grid-template-columns: 1fr;
+  }
+
+  #page-perfil-restaurante .restaurant-profile-action {
+    justify-content: stretch;
+  }
+
+  #page-perfil-restaurante .restaurant-profile-action .btn {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+
+/* =====================================================
+   PERFIL PÚBLICO DO RESTAURANTE — PREMIUM
+   Visualização pelo influenciador
+===================================================== */
+
+#page-perfil-restaurante {
+    background: var(--bg);
+}
+
+/* CONTAINER PRINCIPAL */
+
+#page-perfil-restaurante .restaurant-profile-page {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    padding-bottom: 4rem;
+}
+
+/* FOTO DE CAPA */
+
+#page-perfil-restaurante .restaurant-profile-cover {
+    position: relative;
+    width: min(1100px, calc(100% - 3rem));
+    height: 260px;
+    margin: 2rem auto 0;
+    overflow: hidden;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #242424, #111);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+#page-perfil-restaurante .restaurant-profile-cover img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#page-perfil-restaurante .restaurant-profile-cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 45%,
+        rgba(0,0,0,0.35)
+    );
+    pointer-events: none;
+}
+
+#page-perfil-restaurante .restaurant-profile-no-photo {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* CONTEÚDO */
+
+#page-perfil-restaurante .restaurant-profile-content {
+    width: min(1000px, calc(100% - 3rem));
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+/* CABEÇALHO */
+
+#page-perfil-restaurante .restaurant-profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+#page-perfil-restaurante .restaurant-profile-header h1 {
+    margin: 0.55rem 0 0;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.15;
+}
+
+#page-perfil-restaurante .influencer-restaurant-category {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* IDENTIFICAÇÃO */
+
+#page-perfil-restaurante .restaurant-profile-header .status {
+    flex-shrink: 0;
+    padding: 0.55rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+}
+
+/* CARTÕES */
+
+#page-perfil-restaurante .restaurant-profile-card {
+    margin-bottom: 1.25rem;
+    padding: 1.8rem;
+    background: var(--surface, #171717);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    transition: border-color 0.2s ease;
+}
+
+#page-perfil-restaurante .restaurant-profile-card:hover {
+    border-color: rgba(232,129,58,0.35);
+}
+
+#page-perfil-restaurante .restaurant-profile-card h2 {
+    margin: 0 0 1.1rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+#page-perfil-restaurante .restaurant-profile-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* INFORMAÇÕES */
+
+#page-perfil-restaurante .restaurant-profile-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+#page-perfil-restaurante .restaurant-profile-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1.2rem;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+}
+
+#page-perfil-restaurante .restaurant-profile-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(232,129,58,0.12);
+    font-size: 1.2rem;
+}
+
+#page-perfil-restaurante .restaurant-profile-info-item strong {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+#page-perfil-restaurante .restaurant-profile-info-item p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* BOTÃO DE PROPOSTA */
+
+#page-perfil-restaurante .restaurant-profile-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.8rem;
+}
+
+#page-perfil-restaurante .restaurant-profile-action .btn {
+    min-width: 260px;
+    min-height: 50px;
+    padding: 0.9rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    #page-perfil-restaurante .restaurant-profile-cover {
+        width: calc(100% - 2rem);
+        height: 200px;
+        margin-top: 1rem;
+        border-radius: 14px;
+    }
+
+    #page-perfil-restaurante .restaurant-profile-content {
+        width: calc(100% - 2rem);
+        padding-top: 1.5rem;
+    }
+
+    #page-perfil-restaurante .restaurant-profile-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #page-perfil-restaurante .restaurant-profile-header h1 {
+        font-size: 1.9rem;
+    }
+
+    #page-perfil-restaurante .restaurant-profile-info {
+        grid-template-columns: 1fr;
+    }
+
+    #page-perfil-restaurante .restaurant-profile-card {
+        padding: 1.3rem;
+    }
+
+    #page-perfil-restaurante .restaurant-profile-action {
+        justify-content: stretch;
+    }
+
+    #page-perfil-restaurante .restaurant-profile-action .btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* =========================================================
+   PERFIL DO INFLUENCIADOR
+   ========================================================= */
+
+#page-perfil-influencer .influencer-profile-page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  background: var(--bg);
+}
+
+
+/* CABEÇALHO */
+
+#page-perfil-influencer .influencer-profile-header {
+  width: 100%;
+  padding: 3rem 5%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      #191919 0%,
+      #121212 55%,
+      #0d0d0d 100%
+    );
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* AVATAR */
+
+#page-perfil-influencer .influencer-profile-avatar {
+  width: 120px;
+  height: 120px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--accent2) !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 3rem;
+  font-weight: 700;
+
+  color: white;
+
+  border: 4px solid #252525;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* INFORMAÇÕES PRINCIPAIS */
+
+#page-perfil-influencer .influencer-profile-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+#page-perfil-influencer .influencer-profile-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+
+#page-perfil-influencer .influencer-profile-main h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  color: var(--text);
+  margin: 0;
+}
+
+
+#page-perfil-influencer .influencer-profile-instagram {
+  margin: 0.35rem 0 1rem;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+}
+
+
+/* ESTATÍSTICAS */
+
+#page-perfil-influencer .influencer-profile-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+
+#page-perfil-influencer .influencer-profile-stats div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+
+#page-perfil-influencer .influencer-profile-stats strong {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+
+#page-perfil-influencer .influencer-profile-stats span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+
+/* CONTEÚDO */
+
+#page-perfil-influencer .influencer-profile-content {
+  width: 90%;
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 2rem 0 4rem;
+}
+
+
+/* SOBRE */
+
+#page-perfil-influencer .influencer-profile-about {
+  padding: 1.5rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+
+#page-perfil-influencer .influencer-profile-about h2,
+#page-perfil-influencer .influencer-profile-edit h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--text);
+  margin: 0 0 0.6rem;
+}
+
+
+#page-perfil-influencer .influencer-profile-about p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* CARD DE EDIÇÃO */
+
+#page-perfil-influencer .influencer-profile-edit {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  padding: 2rem;
+}
+
+
+#page-perfil-influencer .influencer-profile-section-title {
+  margin-bottom: 1.5rem;
+}
+
+
+#page-perfil-influencer .influencer-profile-section-title p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+
+/* FORMULÁRIO */
+
+#page-perfil-influencer .influencer-profile-form {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1rem 1.2rem;
+}
+
+
+#page-perfil-influencer .influencer-profile-description {
+  grid-column: 1 / -1;
+}
+
+
+#page-perfil-influencer .influencer-profile-description textarea {
+  min-height: 120px;
+}
+
+
+/* BOTÃO */
+
+#page-perfil-influencer .influencer-profile-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 1.5rem;
+}
+
+
+#page-perfil-influencer .influencer-profile-actions .btn {
+  min-width: 190px;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 700px) {
+
+  #page-perfil-influencer .influencer-profile-header {
+    padding: 2rem 1.5rem;
+
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  #page-perfil-influencer .influencer-profile-main {
+    align-items: center;
+  }
+
+  #page-perfil-influencer .influencer-profile-main h1 {
+    font-size: 2rem;
+  }
+
+  #page-perfil-influencer .influencer-profile-content {
+    width: calc(100% - 2rem);
+  }
+
+  #page-perfil-influencer .influencer-profile-form {
+    grid-template-columns: 1fr;
+  }
+
+  #page-perfil-influencer .influencer-profile-description {
+    grid-column: auto;
+  }
+
+  #page-perfil-influencer .influencer-profile-actions .btn {
+    width: 100%;
+  }
+
+}
+/* =========================================================
+   NOTIFICAÇÕES — HOME DO INFLUENCIADOR
+   ========================================================= */
+
+#page-influencer .notification-btn {
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: var(--surface);
+  color: var(--text);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+#page-influencer .notification-btn:hover {
+  background: var(--surface2);
+  border-color: var(--accent);
+  color: var(--accent);
+
+  transform: translateY(-1px);
+}
+
+#page-influencer .notification-icon {
+  width: 21px;
+  height: 21px;
+}
+
+#page-influencer .notification-dot {
+  position: absolute;
+
+  top: 6px;
+  right: 6px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  border: 2px solid var(--surface);
+}
+/* =====================================================
+   AJUSTE DOS CARDS DE RESTAURANTE - INFLUENCER
+===================================================== */
+
+#page-influencer .influencer-restaurants-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+#page-influencer .influencer-restaurant-card {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+}
+
+#page-influencer .influencer-restaurant-photo {
+    height: 190px;
+}
+
+#page-influencer .influencer-restaurant-body {
+    padding: 1.2rem;
+}
+
+/* =====================================================
+   MEU RESTAURANTE
+===================================================== */
+/* =====================================================
+   MEU RESTAURANTE
+   Perfil do restaurante logado
+===================================================== */
+
+#page-meu-restaurante {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+
+/* =====================================================
+   CABEÇALHO DO PERFIL
+===================================================== */
+
+#page-meu-restaurante .influencer-profile-page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  background: var(--bg);
+}
+
+
+/* Área superior */
+
+#page-meu-restaurante .influencer-profile-header {
+  width: 100%;
+  padding: 3rem 5%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      #191919 0%,
+      #121212 55%,
+      #0d0d0d 100%
+    );
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* =====================================================
+   AVATAR / FOTO
+===================================================== */
+
+#page-meu-restaurante .influencer-profile-avatar {
+  width: 120px;
+  height: 120px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--accent) !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 3rem;
+  font-weight: 700;
+
+  color: white;
+
+  border: 4px solid #252525;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   INFORMAÇÕES PRINCIPAIS
+===================================================== */
+
+#page-meu-restaurante .influencer-profile-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+#page-meu-restaurante .influencer-profile-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  color: var(--accent);
+
+  margin-bottom: 0.4rem;
+}
+
+
+#page-meu-restaurante .influencer-profile-main h1 {
+  font-family: 'Playfair Display', serif;
+
+  font-size: 2.4rem;
+
+  color: var(--text);
+
+  margin: 0;
+
+  line-height: 1.2;
+}
+
+
+/* Categoria */
+
+#page-meu-restaurante #meu-restaurante-categoria {
+  margin: 0.45rem 0 0;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   ÁREA DE CONTEÚDO
+===================================================== */
+
+#page-meu-restaurante .influencer-profile-content {
+  width: 90%;
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 2rem 0 4rem;
+}
+
+
+/* =====================================================
+   SEÇÕES DE INFORMAÇÃO
+===================================================== */
+
+#page-meu-restaurante .influencer-profile-about {
+  padding: 1.5rem 0 2rem;
+
+  border-bottom: 1px solid var(--border);
+
+  margin-bottom: 2rem;
+}
+
+
+#page-meu-restaurante .influencer-profile-about h2 {
+  font-family: 'Playfair Display', serif;
+
+  color: var(--text);
+
+  margin: 0 0 0.6rem;
+
+  font-size: 1.45rem;
+}
+
+
+#page-meu-restaurante .influencer-profile-about p {
+  color: var(--muted);
+
+  line-height: 1.7;
+
+  margin: 0;
+
+  font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   INFORMAÇÕES — ENDEREÇO / TELEFONE
+===================================================== */
+
+#page-meu-restaurante .influencer-profile-about strong {
+  color: var(--text);
+
+  font-weight: 600;
+}
+
+
+#page-meu-restaurante #meu-restaurante-endereco,
+#page-meu-restaurante #meu-restaurante-telefone {
+  margin-top: 0.35rem;
+}
+
+
+/* =====================================================
+   FORMULÁRIO DE EDIÇÃO
+===================================================== */
+
+#page-meu-restaurante .influencer-profile-edit {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  padding: 2rem;
+}
+
+
+/* Título */
+
+#page-meu-restaurante .influencer-profile-section-title {
+  margin-bottom: 1.5rem;
+}
+
+
+#page-meu-restaurante .influencer-profile-section-title h2 {
+  font-family: 'Playfair Display', serif;
+
+  color: var(--text);
+
+  margin: 0 0 0.6rem;
+
+  font-size: 1.45rem;
+}
+
+
+#page-meu-restaurante .influencer-profile-section-title p {
+  color: var(--muted);
+
+  font-size: 0.85rem;
+
+  margin: 0;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   CAMPOS
+===================================================== */
+
+#page-meu-restaurante .influencer-profile-form {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1rem 1.2rem;
+}
+
+
+/* Descrição ocupa as duas colunas */
+
+#page-meu-restaurante .influencer-profile-description {
+  grid-column: 1 / -1;
+}
+
+
+#page-meu-restaurante .influencer-profile-description textarea {
+  min-height: 120px;
+}
+
+
+/* =====================================================
+   BOTÃO
+===================================================== */
+
+#page-meu-restaurante .influencer-profile-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 1.5rem;
+}
+
+
+#page-meu-restaurante .influencer-profile-actions .btn {
+  min-width: 190px;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 700px) {
+
+  #page-meu-restaurante .influencer-profile-header {
+    padding: 2rem 1.5rem;
+
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+
+  #page-meu-restaurante .influencer-profile-main {
+    align-items: center;
+  }
+
+
+  #page-meu-restaurante .influencer-profile-main h1 {
+    font-size: 2rem;
+  }
+
+
+  #page-meu-restaurante .influencer-profile-content {
+    width: calc(100% - 2rem);
+  }
+
+
+  #page-meu-restaurante .influencer-profile-form {
+    grid-template-columns: 1fr;
+  }
+
+
+  #page-meu-restaurante .influencer-profile-description {
+    grid-column: auto;
+  }
+
+
+  #page-meu-restaurante .influencer-profile-actions .btn {
+    width: 100%;
+  }
+
+}
+/* =====================================================
+   NAV - HOME RESTAURANTE
+   POSICIONAMENTO DA PESQUISA
+===================================================== */
+
+#page-restaurante nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+
+/* Mantém a logo à esquerda */
+#page-restaurante nav .logo {
+  flex-shrink: 0;
+}
+
+
+/* Pesquisa fica entre logo e ações */
+#page-restaurante nav > .search-box {
+  margin-left: auto;
+  width: 240px;
+  max-width: 240px;
+}
+
+
+/* Área de notificações + perfil + sair */
+#page-restaurante nav .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
+}
+
+
+/* Responsivo */
+@media (max-width: 800px) {
+
+  #page-restaurante nav {
+    flex-wrap: wrap;
+  }
+
+  #page-restaurante nav > .search-box {
+    order: 3;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+  }
+
+}
+/* =====================================================
+   CARDS DE INFLUENCER - HOME DO RESTAURANTE
+===================================================== */
+
+#page-restaurante .influencers-grid {
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+#page-restaurante .influencer-card {
+  width: 100%;
+  max-width: 620px;
+  box-sizing: border-box;
+}
+
+#page-restaurante .influencer-photo {
+  height: 160px;
+}
+
+#page-restaurante .influencer-body {
+  padding: 1rem;
+}
+
+#page-restaurante .influencer-name {
+  font-size: 1.05rem;
+}
+
+#page-restaurante .influencer-footer {
+  margin-top: 1rem;
+}
+
+/* =========================================================
+   NOTIFICAÇÕES — HOME DO RESTAURANTE
+   ========================================================= */
+
+#page-restaurante .notification-btn {
+  position: relative;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: var(--surface);
+  color: var(--text);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+#page-restaurante .notification-btn:hover {
+  background: var(--surface2);
+  border-color: var(--accent);
+  color: var(--accent);
+
+  transform: translateY(-1px);
+}
+
+#page-restaurante .notification-icon {
+  width: 21px;
+  height: 21px;
+}
+
+#page-restaurante .notification-dot {
+  position: absolute;
+
+  top: 6px;
+  right: 6px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  border: 2px solid var(--surface);
+}
+```css
+/* ==========================================
+   MODAL DE PARCERIA — RESTAURANTE
+========================================== */
+
+.parceria-modal {
+  max-width: 620px;
+  width: 100%;
+}
+
+
+/* PERFIL DO INFLUENCER */
+
+.parceria-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+
+.parceria-profile-photo {
+  width: 82px;
+  height: 82px;
+  min-width: 82px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.06);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.parceria-profile-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: none;
+}
+
+
+.parceria-profile-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+}
+
+
+.parceria-profile-info {
+  min-width: 0;
+}
+
+
+.parceria-profile-info h2 {
+  margin: 0 0 0.25rem;
+}
+
+
+.parceria-profile-info p {
+  margin: 0 0 0.4rem;
+
+  color: var(--accent);
+
+  font-size: 0.9rem;
+}
+
+
+.parceria-profile-info span {
+  color: var(--muted);
+
+  font-size: 0.82rem;
+}
+
+
+/* SEÇÃO SOBRE */
+
+.parceria-section {
+  margin-bottom: 1.5rem;
+}
+
+
+.parceria-section h3 {
+  margin-bottom: 0.5rem;
+
+  font-size: 0.95rem;
+}
+
+
+.parceria-section p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}
+
+
+/* CAMPO DA PROPOSTA */
+
+.parceria-form {
+  margin-top: 1.2rem;
+}
+
+
+.parceria-form textarea {
+  min-height: 130px;
+
+  resize: vertical;
+}
+
+
+.parceria-form small {
+  display: block;
+
+  margin-top: 0.4rem;
+
+  color: var(--muted);
+
+  font-size: 0.75rem;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .parceria-modal {
+    width: calc(100% - 2rem);
+  }
+
+
+  .parceria-profile {
+    align-items: flex-start;
+  }
+
+
+  .parceria-profile-photo {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
+  }
+
+}
+/* =========================================================
+   MODAL PARCERIA — RESTAURANTE → INFLUENCIADOR
+   V2
+========================================================= */
+
+.parceria-modal-v2 {
+  position: relative;
+
+  width: min(680px, calc(100vw - 32px));
+  max-width: 680px;
+
+  max-height: 90vh;
+  overflow-y: auto;
+
+  padding: 2rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.055),
+      rgba(255,255,255,0.018)
+    );
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.55);
+
+  backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+
+.parceria-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  color: var(--muted);
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.parceria-close:hover {
+  background: rgba(255,255,255,0.12);
+
+  color: #fff;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.parceria-hero {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.25rem;
+
+  padding-right: 3rem;
+
+  margin-bottom: 1.5rem;
+}
+
+
+/* FOTO */
+
+.parceria-hero-photo {
+  position: relative;
+
+  width: 112px;
+  height: 112px;
+
+  min-width: 112px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(232,129,58,0.25),
+      rgba(62,207,142,0.12)
+    );
+
+  border: 3px solid rgba(232,129,58,0.45);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35);
+}
+
+
+.parceria-hero-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: none;
+}
+
+
+.parceria-photo-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2.5rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(232,129,58,0.18),
+      rgba(255,255,255,0.03)
+    );
+}
+
+
+/* INFORMAÇÕES */
+
+.parceria-hero-info {
+  min-width: 0;
+}
+
+
+.parceria-label {
+  display: inline-block;
+
+  margin-bottom: 0.35rem;
+
+  color: var(--accent);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+
+.parceria-hero-info h2 {
+  margin: 0 0 0.3rem;
+
+  color: #fff;
+
+  font-size: 1.65rem;
+
+  line-height: 1.2;
+}
+
+
+.parceria-instagram {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   ESTATÍSTICAS
+========================================================= */
+
+.parceria-stats {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0.8rem;
+
+  margin-bottom: 1.7rem;
+}
+
+
+.parceria-stat {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  padding: 0.85rem 1rem;
+
+  background: rgba(255,255,255,0.035);
+
+  border: 1px solid rgba(255,255,255,0.07);
+
+  border-radius: 14px;
+}
+
+
+.parceria-stat-icon {
+  width: 38px;
+  height: 38px;
+
+  min-width: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(232,129,58,0.10);
+
+  font-size: 1rem;
+}
+
+
+.parceria-stat div {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+
+.parceria-stat strong {
+  color: #fff;
+
+  font-size: 0.9rem;
+}
+
+
+.parceria-stat span:not(.parceria-stat-icon) {
+  color: var(--muted);
+
+  font-size: 0.72rem;
+
+  margin-top: 0.1rem;
+}
+
+
+/* =========================================================
+   CABEÇALHOS DAS SEÇÕES
+========================================================= */
+
+.parceria-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 0.65rem;
+
+  margin-bottom: 0.7rem;
+}
+
+
+.parceria-heading-line {
+  width: 3px;
+  min-width: 3px;
+
+  height: 18px;
+
+  margin-top: 2px;
+
+  border-radius: 10px;
+
+  background: var(--accent);
+}
+
+
+.parceria-heading h3 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 0.95rem;
+}
+
+
+.parceria-heading p {
+  margin: 0.25rem 0 0;
+
+  color: var(--muted);
+
+  font-size: 0.76rem;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.parceria-about {
+  margin-bottom: 1.5rem;
+}
+
+
+.parceria-about > p {
+  margin: 0;
+
+  padding-left: 0.65rem;
+
+  color: var(--muted);
+
+  font-size: 0.86rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   DIVISOR
+========================================================= */
+
+.parceria-divider {
+  height: 1px;
+
+  margin: 0 0 1.5rem;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(255,255,255,0.08),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   PROPOSTA
+========================================================= */
+
+.parceria-proposal {
+  margin-bottom: 1.25rem;
+}
+
+
+.parceria-textarea-wrapper {
+  position: relative;
+}
+
+
+.parceria-textarea-wrapper textarea {
+  width: 100%;
+
+  min-height: 145px;
+
+  padding: 1rem;
+
+  padding-bottom: 2rem;
+
+  resize: vertical;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,0.09);
+
+  background: rgba(0,0,0,0.20);
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 0.88rem;
+
+  line-height: 1.55;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.parceria-textarea-wrapper textarea::placeholder {
+  color: rgba(255,255,255,0.32);
+}
+
+
+.parceria-textarea-wrapper textarea:focus {
+  border-color: rgba(232,129,58,0.65);
+
+  background: rgba(0,0,0,0.28);
+
+  box-shadow:
+    0 0 0 3px rgba(232,129,58,0.08);
+}
+
+
+.parceria-counter {
+  position: absolute;
+
+  right: 12px;
+  bottom: 10px;
+
+  color: var(--muted);
+
+  font-size: 0.7rem;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BOTÃO ENVIAR
+========================================================= */
+
+.parceria-submit {
+  width: 100%;
+
+  min-height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.7rem;
+
+  border-radius: 13px;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.parceria-submit:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(232,129,58,0.18);
+}
+
+
+.parceria-arrow {
+  font-size: 1.15rem;
+
+  transition: transform 0.2s ease;
+}
+
+
+.parceria-submit:hover .parceria-arrow {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .parceria-modal-v2 {
+    width: calc(100vw - 20px);
+
+    padding: 1.4rem;
+
+    border-radius: 20px;
+  }
+
+
+  .parceria-hero {
+    gap: 1rem;
+
+    padding-right: 2.5rem;
+  }
+
+
+  .parceria-hero-photo {
+    width: 82px;
+    height: 82px;
+
+    min-width: 82px;
+  }
+
+
+  .parceria-hero-info h2 {
+    font-size: 1.25rem;
+  }
+
+
+  .parceria-stats {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =========================================================
+   PERFIL DO INFLUENCIADOR
+   ========================================================= */
+
+.influencer-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+}
+
+
+/* AVATAR */
+
+.influencer-profile-avatar {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        #f3a261
+    );
+
+    border: 4px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.35),
+        0 0 0 6px rgba(232,129,58,0.08);
+}
+
+
+/* LETRA QUANDO NÃO TEM FOTO */
+
+#perfil-avatar-placeholder-i {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* FOTO */
+
+#perfil-avatar-img-i {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: none;
+}
+
+
+/* ÁREA DO TEXTO */
+
+.influencer-profile-main {
+    min-width: 0;
+}
+
+
+.influencer-profile-label {
+    display: inline-block;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    color: var(--accent);
+
+    margin-bottom: 0.35rem;
+}
+
+
+.influencer-profile-main h1 {
+    margin: 0;
+
+    font-size: 2rem;
+    line-height: 1.1;
+
+    color: #fff;
+}
+
+
+.influencer-profile-instagram {
+    margin: 0.45rem 0 0;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 0.95rem;
+}
+
+
+/* ESTATÍSTICAS */
+
+.influencer-profile-stats {
+    display: flex;
+    gap: 2rem;
+
+    margin-top: 1rem;
+}
+
+
+.influencer-profile-stats > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+
+.influencer-profile-stats strong {
+    font-size: 1.15rem;
+    color: #fff;
+}
+
+
+.influencer-profile-stats span {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .influencer-profile-header {
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .influencer-profile-avatar {
+        width: 90px;
+        height: 90px;
+        min-width: 90px;
+    }
+
+    .influencer-profile-main h1 {
+        font-size: 1.5rem;
+    }
+
+}
+/* =========================================================
+   AVATAR DO INFLUENCER NA NAVEGAÇÃO
+   ========================================================= */
+
+#nav-avatar-influencer {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+#nav-avatar-img-i {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#nav-avatar-placeholder-i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================================================
+   INFLUENCER CARD — PREMIUM
+   ========================================================= */
+
+.influencer-card {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    backdrop-filter: blur(10px);
+}
+
+
+.influencer-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(232, 129, 58, 0.45);
+
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.42),
+        0 0 0 1px rgba(232, 129, 58, 0.08);
+}
+
+
+/* =========================================================
+   FOTO
+   ========================================================= */
+
+.influencer-photo {
+    position: relative;
+
+    width: 100%;
+    height: 270px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1c1c1c,
+            #292929
+        );
+}
+
+
+.influencer-photo::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.65),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+
+.influencer-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.influencer-card:hover .influencer-photo img {
+    transform: scale(1.045);
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.influencer-status {
+    position: absolute;
+
+    top: 16px;
+    left: 16px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 11px;
+
+    border-radius: 999px;
+
+    background: rgba(10, 10, 10, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(10px);
+
+    color: #fff;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 0.02em;
+}
+
+
+.influencer-status span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3ecf8e;
+
+    box-shadow:
+        0 0 8px rgba(62, 207, 142, 0.7);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.influencer-photo-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 3rem;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(232, 129, 58, 0.15),
+            transparent 60%
+        );
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+.influencer-body {
+    padding: 20px 20px 18px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.influencer-heading {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+.influencer-name {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.02em;
+}
+
+
+.influencer-handle {
+    display: block;
+
+    margin-top: 5px;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 0.82rem;
+}
+
+
+.influencer-instagram-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(232, 129, 58, 0.1);
+
+    border: 1px solid rgba(232, 129, 58, 0.18);
+
+    color: var(--accent);
+
+    font-size: 1.3rem;
+}
+
+
+/* =========================================================
+   MÉTRICAS
+   ========================================================= */
+
+.influencer-metrics {
+    display: flex;
+
+    align-items: center;
+
+    margin-top: 18px;
+
+    padding: 13px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.influencer-metric {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    flex: 1;
+}
+
+
+.influencer-metric strong {
+    color: #fff;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+
+.influencer-metric span {
+    color: rgba(255, 255, 255, 0.42);
+
+    font-size: 0.68rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+
+.influencer-metric-divider {
+    width: 1px;
+    height: 30px;
+
+    margin: 0 14px;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.influencer-description {
+    margin: 16px 0 20px;
+
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 0.84rem;
+
+    line-height: 1.55;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+
+.influencer-footer {
+    margin-top: auto;
+}
+
+
+.influencer-partner-btn {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 14px;
+
+    border: 1px solid rgba(232, 129, 58, 0.35);
+
+    border-radius: 12px;
+
+    background:
+        rgba(232, 129, 58, 0.08);
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.influencer-partner-btn:hover {
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+    color: #fff;
+
+    transform: translateY(-1px);
+}
+
+
+.influencer-partner-arrow {
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.influencer-partner-btn:hover .influencer-partner-arrow {
+    transform: translateX(4px);
+}
+/* =========================================================
+   LANDING PAGE
+   ========================================================= */
+
+#page-landing {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(232, 129, 58, 0.12), transparent 35%),
+        #0d0d0d;
+    color: #fff;
+    overflow: hidden;
+}
+
+.landing-nav {
+    width: 100%;
+    height: 90px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.landing-nav .logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.landing-nav .logo span {
+    color: #e8813a;
+}
+
+.landing-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.btn-nav-login,
+.btn-nav-register,
+.landing-buttons button {
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.btn-nav-login {
+    padding: 11px 22px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.btn-nav-login:hover {
+    border-color: #e8813a;
+    color: #e8813a;
+}
+
+.btn-nav-register {
+    padding: 11px 22px;
+    background: #e8813a;
+    color: #fff;
+    border: 1px solid #e8813a;
+}
+
+.btn-nav-register:hover {
+    background: #d96f2d;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.landing-hero {
+    min-height: calc(100vh - 90px);
+    width: 100%;
+    padding: 70px 7%;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.landing-content {
+    max-width: 650px;
+}
+
+.landing-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(232,129,58,0.25);
+    border-radius: 30px;
+    background: rgba(232,129,58,0.08);
+    color: #e8813a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.landing-content h1 {
+    margin: 0;
+    font-size: clamp(48px, 5.5vw, 78px);
+    line-height: 1.02;
+    letter-spacing: -3px;
+    font-weight: 800;
+}
+
+.landing-content h1 span {
+    display: block;
+    color: #e8813a;
+}
+
+.landing-content p {
+    max-width: 570px;
+    margin: 28px 0 34px;
+    color: #a9a9a9;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.landing-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.landing-buttons .btn-primary {
+    padding: 15px 26px;
+    background: #e8813a;
+    color: #fff;
+    border: 1px solid #e8813a;
+    font-size: 15px;
+}
+
+.landing-buttons .btn-primary:hover {
+    background: #d96f2d;
+    transform: translateY(-2px);
+}
+
+.landing-buttons .btn-secondary {
+    padding: 15px 26px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 15px;
+}
+
+.landing-buttons .btn-secondary:hover {
+    border-color: rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.04);
+}
+
+
+/* =========================================================
+   VISUAL DOS CARDS
+   ========================================================= */
+
+.landing-visual {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-visual::before {
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: rgba(232,129,58,0.10);
+    filter: blur(45px);
+}
+
+.landing-card {
+    position: absolute;
+    width: min(390px, 90%);
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-radius: 18px;
+    background: #151515;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+    z-index: 2;
+}
+
+.card-main {
+    transform: translateY(-55px);
+}
+
+.card-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: rgba(232,129,58,0.12);
+    font-size: 23px;
+}
+
+.landing-card strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.landing-card span {
+    display: block;
+    color: #898989;
+    font-size: 13px;
+}
+/* =========================================================
+   LANDING — PREVIEW REALISTA
+   ========================================================= */
+
+.landing-preview {
+    position: relative;
+    width: min(500px, 92%);
+    padding: 26px;
+    border-radius: 24px;
+    background: rgba(18, 18, 18, 0.92);
+    border: 1px solid rgba(255,255,255,0.09);
+    box-shadow:
+        0 35px 100px rgba(0,0,0,0.55),
+        inset 0 1px 0 rgba(255,255,255,0.03);
+    z-index: 4;
+}
+
+
+/* HEADER */
+
+.preview-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.preview-label {
+    display: block;
+    margin-bottom: 7px;
+    color: #e8813a;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.preview-header h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.preview-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #3ecf8e;
+    box-shadow: 0 0 14px rgba(62,207,142,0.5);
+}
+
+
+/* PERFIL */
+
+.preview-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile-image {
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(232,129,58,0.25),
+            rgba(90,48,25,0.6)
+        );
+
+    border: 1px solid rgba(232,129,58,0.2);
+
+    font-size: 32px;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info > strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #fff;
+    font-size: 17px;
+}
+
+.profile-info > span {
+    display: block;
+    color: #777;
+    font-size: 12px;
+}
+
+
+.profile-stats {
+    display: flex;
+    gap: 25px;
+    margin-top: 12px;
+}
+
+.profile-stats div strong {
+    display: block;
+    color: #ddd;
+    font-size: 12px;
+}
+
+.profile-stats div span {
+    display: block;
+    margin-top: 2px;
+    color: #666;
+    font-size: 9px;
+}
+
+
+/* DIVISOR */
+
+.preview-divider {
+    width: 100%;
+    height: 1px;
+    margin: 24px 0;
+    background: rgba(255,255,255,0.07);
+}
+
+
+/* PARCERIA */
+
+.preview-partnership {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.creator-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #252525;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    color: #ddd;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.creator-avatar.orange {
+    background: rgba(232,129,58,0.14);
+    color: #e8813a;
+    border-color: rgba(232,129,58,0.2);
+}
+
+.creator strong {
+    display: block;
+    color: #ddd;
+    font-size: 11px;
+}
+
+.creator span {
+    display: block;
+    margin-top: 3px;
+    color: #666;
+    font-size: 9px;
+}
+
+.partnership-arrow {
+    color: #e8813a;
+    font-size: 20px;
+}
+
+
+/* FOOTER */
+
+.preview-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 25px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #555;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.preview-footer strong {
+    color: #3ecf8e;
+    font-size: 10px;
+}
+
+.preview-footer button {
+    padding: 10px 14px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: #e8813a;
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.preview-footer button:hover {
+    background: #d96f2d;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CARDS FLUTUANTES
+   ========================================================= */
+
+.floating-stat {
+    position: absolute;
+    z-index: 6;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 15px;
+
+    background: rgba(20,20,20,0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.floating-stat > span {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(232,129,58,0.12);
+    color: #e8813a;
+
+    font-size: 12px;
+}
+
+.floating-stat strong {
+    display: block;
+    color: #fff;
+    font-size: 11px;
+}
+
+.floating-stat small {
+    display: block;
+    margin-top: 2px;
+    color: #666;
+    font-size: 8px;
+}
+
+.stat-one {
+    top: 65px;
+    right: 20px;
+}
+
+.stat-two {
+    bottom: 70px;
+    left: 15px;
+}
+
+.stat-two > span {
+    background: rgba(62,207,142,0.12);
+    color: #3ecf8e;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .landing-preview {
+        width: min(500px, 90%);
+    }
+
+    .stat-one {
+        right: 0;
+    }
+
+    .stat-two {
+        left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .landing-preview {
+        padding: 20px;
+    }
+
+    .preview-partnership {
+        flex-wrap: wrap;
+    }
+
+    .partnership-arrow {
+        display: none;
+    }
+
+    .floating-stat {
+        display: none;
+    }
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .landing-hero {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+        padding-bottom: 80px;
+    }
+
+    .landing-content {
+        max-width: 700px;
+    }
+
+    .landing-visual {
+        min-height: 350px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .landing-nav {
+        height: 75px;
+        padding: 0 5%;
+    }
+
+    .landing-nav .logo {
+        font-size: 23px;
+    }
+
+    .btn-nav-login,
+    .btn-nav-register {
+        padding: 9px 14px;
+        font-size: 13px;
+    }
+
+    .landing-hero {
+        padding: 45px 5% 70px;
+        gap: 20px;
+    }
+
+    .landing-content h1 {
+        font-size: 46px;
+        letter-spacing: -2px;
+    }
+
+    .landing-content p {
+        font-size: 16px;
+    }
+
+    .landing-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .landing-buttons button {
+        width: 100%;
+    }
+
+    .landing-visual {
+        min-height: 300px;
+    }
+
+}
+
+
+/* =====================================================
+   GASTROLINK - GRID DA HOME DO RESTAURANTE
+   ===================================================== */
+
+#page-restaurante .influencers-grid {
+    width: 100% !important;
+    display: grid !important;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+    ) !important;
+
+    gap: 24px !important;
+
+    /* NÃO centraliza o grid inteiro */
+    justify-content: stretch !important;
+
+    margin: 0 !important;
+}
+
+#page-restaurante .influencer-card {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+/* Mantém os cards ocupando corretamente a coluna */
+
+#page-restaurante .influencer-card {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+#page-restaurante {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 50% -20%,
+            rgba(232, 129, 58, 0.12),
+            transparent 45%
+        ),
+        #0d0d0d;
+}
+/* =========================================================
+   GASTROLINK - NOVA IDENTIDADE DA HOME
+   ESTE BLOCO DEVE SER O ÚLTIMO DO CSS
+   ========================================================= */
+
+/* FUNDO PRINCIPAL */
+#page-restaurante {
+    position: relative !important;
+    min-height: 100vh !important;
+
+    background:
+        radial-gradient(
+            ellipse 800px 450px at 55% 0%,
+            rgba(232, 129, 58, 0.16),
+            transparent 65%
+        ),
+        radial-gradient(
+            ellipse 500px 500px at 100% 80%,
+            rgba(232, 129, 58, 0.07),
+            transparent 70%
+        ),
+        #090909 !important;
+}
+
+/* ÁREA PRINCIPAL */
+#page-restaurante .restaurant-layout {
+    background: transparent !important;
+}
+
+
+/* TÍTULO */
+#page-restaurante .restaurant-home-header h1 {
+    font-family: 'Playfair Display', serif !important;
+
+    font-size: 2.15rem !important;
+
+    color: #ffffff !important;
+
+    letter-spacing: -0.5px !important;
+}
+
+
+/* TEXTO DO TÍTULO */
+#page-restaurante .restaurant-home-header p {
+    color: rgba(255,255,255,0.52) !important;
+
+    font-size: 0.9rem !important;
+}
+
+
+/* PEQUENO DETALHE LARANJA NO TÍTULO */
+#page-restaurante .restaurant-home-header h1::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 3px;
+
+    margin-top: 12px;
+
+    border-radius: 10px;
+
+    background: #e8813a;
+
+    box-shadow:
+        0 0 15px rgba(232,129,58,0.35);
+}
+
+
+/* FILTROS */
+#page-restaurante .sidebar {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.015)
+        ) !important;
+
+    border: 1px solid rgba(255,255,255,0.08) !important;
+
+    border-radius: 16px !important;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.30) !important;
+}
+
+
+/* CARDS */
+#page-restaurante .influencer-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.012)
+        ) !important;
+
+    border: 1px solid rgba(255,255,255,0.08) !important;
+
+    border-radius: 18px !important;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.28) !important;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease !important;
+}
+
+
+/* HOVER */
+#page-restaurante .influencer-card:hover {
+    transform: translateY(-6px) !important;
+
+    border-color: rgba(232,129,58,0.55) !important;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.40),
+        0 0 25px rgba(232,129,58,0.08) !important;
+}
+
+
+/* FOTO */
+#page-restaurante .influencer-photo {
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(232,129,58,0.16),
+            #181818 65%
+        ) !important;
+}
+
+
+/* STATUS DISPONÍVEL */
+#page-restaurante .influencer-status {
+    background: rgba(8,8,8,0.75) !important;
+
+    border: 1px solid rgba(255,255,255,0.10) !important;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* BOTÃO */
+#page-restaurante .influencer-partner-btn {
+    border-color: rgba(232,129,58,0.35) !important;
+
+    background:
+        rgba(232,129,58,0.07) !important;
+}
+
+
+#page-restaurante .influencer-partner-btn:hover {
+    background: #e8813a !important;
+
+    border-color: #e8813a !important;
+}
+
+
+/* =========================================================
+   TEXTURA DO FUNDO
+   ========================================================= */
+
+#page-restaurante::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 26px 26px;
+
+    opacity: 0.22;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 80%
+        );
+
+    z-index: 0;
+}
+
+
+/* CONTEÚDO ACIMA DA TEXTURA */
+#page-restaurante .restaurant-layout,
+#page-restaurante nav {
+    position: relative;
+
+    z-index: 1;
+}
+
+/* =========================================================
+   GASTROLINK — INFLUENCER CARDS
+   ACABAMENTO PREMIUM
+   ESTE BLOCO DEVE FICAR NO FINAL DO CSS
+   ========================================================= */
+
+/* GRID */
+
+#page-restaurante .influencers-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 0;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+#page-restaurante .influencer-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.012)
+        );
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.28);
+
+    backdrop-filter: blur(14px);
+
+    transition:
+        transform 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+
+/* HOVER */
+
+#page-restaurante .influencer-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(232,129,58,0.48);
+
+    box-shadow:
+        0 22px 50px rgba(0,0,0,0.42),
+        0 0 30px rgba(232,129,58,0.07);
+}
+
+
+/* =========================================================
+   FOTO
+   ========================================================= */
+
+#page-restaurante .influencer-photo {
+    position: relative;
+
+    width: 100%;
+    height: 285px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(232,129,58,0.16),
+            #171717 68%
+        );
+}
+
+
+/* IMAGEM */
+
+#page-restaurante .influencer-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s cubic-bezier(.2,.7,.2,1),
+        filter 0.4s ease;
+}
+
+
+/* ZOOM SUAVE */
+
+#page-restaurante .influencer-card:hover
+.influencer-photo img {
+    transform: scale(1.055);
+}
+
+
+/* ESCURECIMENTO NA PARTE INFERIOR */
+
+#page-restaurante .influencer-photo::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.02) 45%,
+            rgba(0,0,0,0.60) 100%
+        );
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+#page-restaurante .influencer-status {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    z-index: 3;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 11px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(7,7,7,0.72);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(12px);
+
+    color: #fff;
+
+    font-size: 0.69rem;
+    font-weight: 600;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* BOLINHA VERDE */
+
+#page-restaurante .influencer-status span {
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #3ecf8e;
+
+    box-shadow:
+        0 0 8px rgba(62,207,142,0.75);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+#page-restaurante .influencer-photo-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(232,129,58,0.16),
+            transparent 62%
+        );
+
+    font-size: 3rem;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+#page-restaurante .influencer-body {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 20px 18px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+#page-restaurante .influencer-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 14px;
+}
+
+
+/* NOME */
+
+#page-restaurante .influencer-name {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.02em;
+}
+
+
+/* INSTAGRAM */
+
+#page-restaurante .influencer-handle {
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 0.78rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   ÍCONE INSTAGRAM
+   ========================================================= */
+
+#page-restaurante .influencer-instagram-icon {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        rgba(232,129,58,0.08);
+
+    border:
+        1px solid rgba(232,129,58,0.18);
+
+    color:
+        var(--accent);
+
+    font-size: 1.25rem;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+#page-restaurante .influencer-card:hover
+.influencer-instagram-icon {
+    background:
+        rgba(232,129,58,0.14);
+
+    border-color:
+        rgba(232,129,58,0.32);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   MÉTRICAS
+   ========================================================= */
+
+#page-restaurante .influencer-metrics {
+    display: flex;
+    align-items: center;
+
+    margin-top: 17px;
+    padding: 14px 0;
+
+    border-top:
+        1px solid rgba(255,255,255,0.07);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.07);
+}
+
+
+#page-restaurante .influencer-metric {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+#page-restaurante .influencer-metric strong {
+    color: #fff;
+
+    font-size: 0.94rem;
+    font-weight: 700;
+}
+
+
+#page-restaurante .influencer-metric span {
+    color:
+        rgba(255,255,255,0.40);
+
+    font-size: 0.66rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.07em;
+}
+
+
+/* DIVISOR */
+
+#page-restaurante .influencer-metric-divider {
+    width: 1px;
+    height: 30px;
+
+    margin: 0 15px;
+
+    background:
+        rgba(255,255,255,0.08);
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+#page-restaurante .influencer-description {
+    min-height: 42px;
+
+    margin: 16px 0 20px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+#page-restaurante .influencer-footer {
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   BOTÃO DE PARCERIA
+   ========================================================= */
+
+#page-restaurante .influencer-partner-btn {
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+    border:
+        1px solid rgba(232,129,58,0.32);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(232,129,58,0.12),
+            rgba(232,129,58,0.055)
+        );
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* HOVER BOTÃO */
+
+#page-restaurante .influencer-partner-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #e8813a,
+            #d96f2d
+        );
+
+    border-color:
+        #e8813a;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 8px 22px rgba(232,129,58,0.18);
+}
+
+
+/* SETA */
+
+#page-restaurante .influencer-partner-arrow {
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+#page-restaurante .influencer-partner-btn:hover
+.influencer-partner-arrow {
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+   ========================================================= */
+
+#page-restaurante .empty-influencers {
+    grid-column: 1 / -1;
+
+    padding: 60px 30px;
+
+    text-align: center;
+
+    border:
+        1px dashed rgba(255,255,255,0.10);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.02);
+}
+
+
+#page-restaurante .empty-influencers .empty-icon {
+    margin-bottom: 12px;
+
+    font-size: 2.5rem;
+
+    opacity: 0.7;
+}
+
+
+#page-restaurante .empty-influencers h3 {
+    margin: 0 0 7px;
+
+    color: #fff;
+
+    font-size: 1rem;
+}
+
+
+#page-restaurante .empty-influencers p {
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    #page-restaurante .influencers-grid {
+        grid-template-columns:
+            repeat(2, minmax(280px, 1fr));
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    #page-restaurante .influencers-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #page-restaurante .influencer-photo {
+        height: 300px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    #page-restaurante .influencer-photo {
+        height: 260px;
+    }
+
+    #page-restaurante .influencer-body {
+        padding: 18px 16px 16px;
+    }
+
+}
+
+/* =====================================================
+   GRID DE INFLUENCIADORES — HOME DO RESTAURANTE
+   ===================================================== */
+
+#page-restaurante #influencers-grid {
+    width: 100%;
+    display: grid;
+
+    /* 5 cards por linha */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 24px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CARD
+   ===================================================== */
+
+#page-restaurante #influencers-grid .influencer-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+   ===================================================== */
+
+@media (max-width: 1400px) {
+
+    #page-restaurante #influencers-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 1150px) {
+
+    #page-restaurante #influencers-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    #page-restaurante #influencers-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #page-restaurante #influencers-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+}
+
+/* CABEÇALHO DO DASHBOARD RESTAURANTE */
+
+#page-restaurante .restaurant-home-header {
+    margin-bottom: 38px;
+}
+
+#page-restaurante .dashboard-eyebrow {
+    display: inline-block;
+    color: #e8813a;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+#page-restaurante .restaurant-home-header h1 {
+    font-size: clamp(26px, 3vw, 36px);
+    margin-bottom: 10px;
+}
+
+#page-restaurante .restaurant-home-header p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #999;
+    max-width: 620px;
+}
+
+#page-restaurante .restaurant-dashboard-section-heading {
+    margin-bottom: 22px;
+}
+
+#page-restaurante .restaurant-dashboard-section-heading h2 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+#page-restaurante .restaurant-dashboard-section-heading p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #999;
+    margin: 0;
+}
+
+/* =========================================
+   EYEBROW - HOME DO INFLUENCER
+   ========================================= */
+
+#page-influencer .home-eyebrow {
+    display: inline-block;
+
+    color: #e8813a;
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 14px;
+
+    position: relative;
+}
+
+#page-influencer .home-eyebrow::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 3px;
+
+    margin-top: 10px;
+
+    border-radius: 10px;
+
+    background: #e8813a;
+}
+
+/* =====================================================
+   GASTROLINK - IDENTIDADE VISUAL HOME INFLUENCER
+===================================================== */
+
+#page-influencer {
+    position: relative !important;
+    min-height: 100vh !important;
+
+    background:
+        radial-gradient(
+            ellipse 800px 450px at 55% 0%,
+            rgba(232, 129, 58, 0.16),
+            transparent 65%
+        ),
+        radial-gradient(
+            ellipse 500px 500px at 100% 80%,
+            rgba(232, 129, 58, 0.07),
+            transparent 70%
+        ),
+        #090909 !important;
+}
+
+/* Linha de luz no topo */
+#page-influencer::after {
+    content: "";
+    position: fixed;
+
+    top: 70px;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(232, 129, 58, 0.55),
+        transparent
+    );
+
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Áreas internas transparentes */
+#page-influencer .influencer-home-layout,
+#page-influencer .influencer-home-content {
+    background: transparent !important;
+}
+/* Título principal */
+#page-influencer .restaurant-home-header h1 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.15rem !important;
+    line-height: 1.2 !important;
+    color: #fff !important;
+    letter-spacing: -0.5px !important;
+}
+
+/* Descrição principal */
+#page-influencer .restaurant-home-header p {
+    color: rgba(255,255,255,0.52) !important;
+    font-size: 0.9rem !important;
+}
+
+/* Risco laranja abaixo do título */
+#page-influencer .restaurant-home-header h1::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    margin-top: 12px;
+    border-radius: 10px;
+    background: #e8813a;
+    box-shadow: 0 0 15px rgba(232,129,58,0.35);
+}
+
+/* Título da seção */
+#page-influencer .section-title h2 {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+}
+/* Espaçamento dos filtros do restaurante */
+.restaurant-layout .sidebar > button[onclick="resetFilters()"] {
+    margin-top: 15px;
+}
+
+#page-restaurante .sidebar .btn-primary {
+    margin-top: 18px;
+    display: block;
+    width: 100%;
+}
+
+#page-restaurante .sidebar .btn-primary,
+#page-restaurante .sidebar .btn-secondary {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#page-restaurante .sidebar .filter-group {
+    margin-bottom: 18px;
+}
+
+#page-restaurante .sidebar .filter-group select {
+    width: 100%;
+    box-sizing: border-box;
+}
+#nav-avatar-restaurante {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+#nav-avatar-img-r {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#nav-avatar-placeholder-r {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#perfil-avatar-r {
+    position: relative;
+    overflow: hidden;
+}
+
+#perfil-avatar-img-r {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+</style>
