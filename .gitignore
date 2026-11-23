@@ -1,0 +1,21 @@
+# Compilação
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+
+# Configurações locais
+**/appsettings.Development.json
+**/appsettings.*.Local.json
+secrets.json
+
+# Logs
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
